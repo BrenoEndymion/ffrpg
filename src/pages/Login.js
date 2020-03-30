@@ -15,6 +15,7 @@ import { Image, ImageView, TextWelcome } from './styles/LoginStyles';
 import { TextInput, TextInputWhite } from '../components/TextInputs';
 import { BtnDefault } from "../components/Buttons";
 import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
+import { Actions } from 'react-native-router-flux';
 
 export default function Login(props) {
     return (
@@ -46,7 +47,7 @@ export default function Login(props) {
                     style={styles.enter}
                     name="Entrar" />
                 
-                <TouchableOpacity style={styles.btnsubmit}>
+                <TouchableOpacity style={styles.btnsubmit} onPress={() => Actions.signup()}>
                     <Text style={styles.textStyle}>Crie a sua conta</Text>
                 </TouchableOpacity>                
             </View>
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     btnsubmit: {
-        flex: 1,
         marginTop: 10,
     },
     textStyle: {
