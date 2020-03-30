@@ -13,10 +13,8 @@ import {
 
 import { Image, ImageView, TextWelcome } from './styles/LoginStyles';
 import { TextInput, TextInputWhite } from '../components/TextInputs';
-
-
-
-
+import { BtnDefault } from "../components/Buttons";
+import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
 
 export default function Login(props) {
     return (
@@ -32,23 +30,21 @@ export default function Login(props) {
             </View>
 
             <View style={styles.containerInputs}>
-                
-                <TextInputWhite
-                style ={styles.inputStyle} 
-                placeholder="Digite o seu e-mail"
-                
-                />
-                <TextInputWhite 
-                style ={styles.inputStyle} 
-                placeholder="Digite a sua senha "
-                
-                />
-
-                <TouchableOpacity                  
-                style={styles.btnsubmit}>
-                <Text style={styles.textStyle}>Entrar</Text>
+                <Margin>
+                    <TextInput
+                    style ={styles.inputStyle} 
+                    placeholder="Digite o seu e-mail"
                     
-                </TouchableOpacity>
+                    />
+                    <TextInput 
+                    style ={styles.inputStyle} 
+                    placeholder="Digite a sua senha "
+                    
+                    />
+                </Margin>
+                <BtnDefault                  
+                    style={styles.enter}
+                    name="Entrar" />
                 
                 <TouchableOpacity style={styles.btnsubmit}>
                     <Text style={styles.textStyle}>Crie a sua conta</Text>
@@ -65,40 +61,29 @@ const styles = StyleSheet.create({
 
     background:{
         flex:1,
-        alignItems: 'center',
         justifyContent: 'center',
     },
     logo:{
         flex: 1,
         justifyContent: 'center',
+        alignItems: 'center',
     },
     containerInputs:{
         flex: 1,
-
     },
-    inputStyle:{
-        width: '90%',
-        marginBottom:15,
-        fontSize: 15,
-        padding: 10,
-
-
+    enter: {
+        margin: 10,
     },
     btnsubmit: {
         flex: 1,
-        width: '90%',
-        height: 15,
-        textAlign: 'center',
-        justifyContent: 'center',
-        
-
+        marginTop: 10,
     },
     textStyle: {
         textAlign: 'center',
-    } 
-
-
-
+    } ,
+    inputStyle: {
+        margin: 10,
+    }
 });
     
   

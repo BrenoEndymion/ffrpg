@@ -10,8 +10,8 @@ const Routes = () => (
     <Router>
         <Stack key="root">
           <Scene key="home" component={Home} hideNavBar={true} />         
-          <Scene key="login" component={Login} hideNavBar={true} />
-          <Scene key="signup" component={Signup} hideNavBar={true} initial />
+          <Scene key="login" component={Login} hideNavBar={true} initial />
+          <Scene key="signup" component={Signup} hideNavBar={true} />
       </Stack>
   </Router> 
 );
