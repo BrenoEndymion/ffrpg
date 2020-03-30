@@ -7,11 +7,13 @@ import {
   Text,
   StatusBar,
   KeyboardAvoidingView,
-  TouchableOpacity
+  TouchableOpacity,
+  Button
 } from 'react-native';
 
 import { Image, ImageView, TextWelcome } from './styles/LoginStyles';
 import { TextInput, TextInputWhite } from '../components/TextInputs';
+
 
 
 
@@ -30,10 +32,7 @@ export default function Login(props) {
             </View>
 
             <View style={styles.containerInputs}>
-                <Text>
-                    Olá, bem vindo ao app 
-                </Text>
-
+                
                 <TextInputWhite
                 style ={styles.inputStyle} 
                 placeholder="Digite o seu e-mail"
@@ -45,12 +44,14 @@ export default function Login(props) {
                 
                 />
 
-                <TouchableOpacity>
-                    <Text>Entrar</Text>
+                <TouchableOpacity                  
+                style={styles.btnsubmit}>
+                <Text style={styles.textStyle}>Entrar</Text>
+                    
                 </TouchableOpacity>
-
-                <TouchableOpacity>
-                    <Text>Crie a sua conta</Text>
+                
+                <TouchableOpacity style={styles.btnsubmit}>
+                    <Text style={styles.textStyle}>Crie a sua conta</Text>
                 </TouchableOpacity>                
             </View>
 
@@ -82,7 +83,19 @@ const styles = StyleSheet.create({
         padding: 10,
 
 
-    }
+    },
+    btnsubmit: {
+        flex: 1,
+        width: '90%',
+        height: 15,
+        textAlign: 'center',
+        justifyContent: 'center',
+        
+
+    },
+    textStyle: {
+        textAlign: 'center',
+    } 
 
 
 
