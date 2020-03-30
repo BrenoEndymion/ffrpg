@@ -56,7 +56,7 @@ export default function Signup(props) {
     const GoBack = ({ }) => (
         <Together>
             <BtnB onPress={() => Actions.pop()}>
-                <Text>Voltar</Text>
+                <Text style={{color: colors.white, paddingLeft: 10}}>Voltar</Text>
             </BtnB>
         </Together>
     )
@@ -131,7 +131,7 @@ export default function Signup(props) {
                     leftComponent={<GoBack />}
                     statusBarProps={{ barStyle: 'light-content' }}
                     barStyle="light-content"
-                    centerComponent={{ text: 'Cadastro', style: styles.headerText }}
+                    centerComponent={{ text: 'Crave sua jornada', style: styles.headerText }}
                     containerStyle={{
                         backgroundColor: colors.blueDefault,
                         justifyContent: 'space-around',
@@ -170,5 +170,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.grayLight,
         justifyContent: 'center',
     }, 
+    headerText: {
+        color: colors.white,
+    }
 });
   
