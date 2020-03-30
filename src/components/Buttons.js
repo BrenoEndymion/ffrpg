@@ -7,18 +7,18 @@ import colors from '../config/colors';
 export const BtnDefaultBorded = ({ icon, name, onPress }) => (
     <Container>
         <BtnDefaultBorded onPress={onPress}>
-            <IconDefaultBtnBorded source={icon} />
-            <IconDefaultBtnBorded>{name}</IconDefaultBtnBorded>
+            <IconBtnBorded source={icon} />
+            <IconBtnBorded>{name}</IconBtnBorded>
         </BtnDefaultBorded>
     </Container>
 )
 
 export const BtnDefault = ({ icon, name, onPress }) => (
     <Container>
-        <BtnDefault onPress={onPress}>
-            <IconBtnDefault source={icon} />
-            <TextBtnDefault>{name}</TextBtnDefault>
-        </BtnDefault>
+        <Btn onPress={onPress}>
+            <IconBtn source={icon} />
+            <TextBtn>{name}</TextBtn>
+        </Btn>
     </Container>
 )
 
