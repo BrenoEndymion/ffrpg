@@ -4,7 +4,7 @@ import { BtnBorded, TextBtnBorded, Container, IconBtnBorded, Btn, BtnFull, IconB
 import Icon from 'react-native-vector-icons/Ionicons'
 import colors from '../config/colors';
 
-export const BtnBorded = ({ icon, name, onPress }) => (
+export const BtnDefaultBorded = ({ icon, name, onPress }) => (
     <Container>
         <BtnBorded onPress={onPress}>
             <IconBtnBorded source={icon} />
@@ -13,7 +13,7 @@ export const BtnBorded = ({ icon, name, onPress }) => (
     </Container>
 )
 
-export const Btn = ({ icon, name, onPress }) => (
+export const BtnDefault = ({ icon, name, onPress }) => (
     <Container>
         <Btn onPress={onPress}>
             <IconBtn source={icon} />
@@ -22,7 +22,7 @@ export const Btn = ({ icon, name, onPress }) => (
     </Container>
 )
 
-export const BtnCircle = () => (
+export const BtnCircleDefault = () => (
     <Container>
         <BtnCircle>
             <Icon name={'ios-arrow-round-forward'} color={colors.white} size={45} />
@@ -30,7 +30,7 @@ export const BtnCircle = () => (
     </Container>
 )
 
-export const BtnFull = ({ icon, name, onPress }) => (
+export const BtnFullDefault = ({ icon, name, onPress }) => (
     <Container>
         <BtnFull onPress={onPress}>
             <IconBtn source={icon} />
@@ -39,7 +39,7 @@ export const BtnFull = ({ icon, name, onPress }) => (
     </Container>
 )
 
-export const BtnTiny = ({ icon, name, onPress }) => (
+export const BtnTinyDefault = ({ icon, name, onPress }) => (
     <Container>
         <BtnTiny onPress={onPress}>
             <IconBtn source={icon} />

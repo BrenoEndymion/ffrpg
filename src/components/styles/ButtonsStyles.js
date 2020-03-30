@@ -20,7 +20,6 @@ export const BtnBorded = styled.TouchableOpacity`
 export const TextBtnBorded = styled.Text`
     color: ${colors.blueDefault}; 
     font-size: ${fonts.textButton}px;
-    fontFamily: ${fonts.medium};
     width: 100%;
     text-align: center;
     position: absolute;
@@ -65,7 +64,6 @@ export const BtnTiny = styled.View`
 export const TextBtn = styled.Text`
     color: ${colors.white}; 
     font-size: ${fonts.textButton}px;
-    fontFamily: ${fonts.medium};
     width: 100%;
     text-align: center;
     position: absolute;
