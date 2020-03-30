@@ -4,33 +4,33 @@ import { BtnBorded, TextBtnBorded, Container, IconBtnBorded, Btn, BtnFull, IconB
 import Icon from 'react-native-vector-icons/Ionicons'
 import colors from '../config/colors';
 
-export const BtnBorded = ({ icon, name, onPress }) => (
+export const BtnDefaultBorded = ({ icon, name, onPress }) => (
     <Container>
-        <BtnBorded onPress={onPress}>
-            <IconBtnBorded source={icon} />
-            <TextBtnBorded>{name}</TextBtnBorded>
-        </BtnBorded>
+        <BtnDefaultBorded onPress={onPress}>
+            <IconDefaultBtnBorded source={icon} />
+            <IconDefaultBtnBorded>{name}</IconDefaultBtnBorded>
+        </BtnDefaultBorded>
     </Container>
 )
 
-export const Btn = ({ icon, name, onPress }) => (
+export const BtnDefault = ({ icon, name, onPress }) => (
     <Container>
-        <Btn onPress={onPress}>
-            <IconBtn source={icon} />
-            <TextBtn>{name}</TextBtn>
-        </Btn>
+        <BtnDefault onPress={onPress}>
+            <IconBtnDefault source={icon} />
+            <TextBtnDefault>{name}</TextBtnDefault>
+        </BtnDefault>
     </Container>
 )
 
-export const BtnCircle = () => (
+export const BtnDefaultCircle = () => (
     <Container>
-        <BtnCircle>
+        <BtnDefaultCircle>
             <Icon name={'ios-arrow-round-forward'} color={colors.white} size={45} />
-        </BtnCircle>
+        </BtnDefaultCircle>
     </Container>
 )
 
-export const BtnFull = ({ icon, name, onPress }) => (
+export const BtnDefaultFull = ({ icon, name, onPress }) => (
     <Container>
         <BtnFull onPress={onPress}>
             <IconBtn source={icon} />
@@ -39,7 +39,7 @@ export const BtnFull = ({ icon, name, onPress }) => (
     </Container>
 )
 
-export const BtnTiny = ({ icon, name, onPress }) => (
+export const BtnDefaultTiny = ({ icon, name, onPress }) => (
     <Container>
         <BtnTiny onPress={onPress}>
             <IconBtn source={icon} />
