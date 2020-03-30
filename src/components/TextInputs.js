@@ -7,7 +7,7 @@ import { Container, Input, InputWhite } from './styles/TextInputsStyles';
 export const TextInput = ({ placeholder, secure,onChangeText }) => (
     <Input
         placeholder={placeholder}
-        placeholderTextColor={colors.textColor}
+        placeholderTextColor={colors.placeHolder}
         secureTextEntry={secure}
         textColor={colors.textColor}
         style={styles.textInputStyle}
@@ -20,7 +20,7 @@ export const TextInputWhite = ({ placeholder, secure, value, onChangeText }) => 
         placeholder={placeholder}
         onChangeText={onChangeText}
         value={value}
-        placeholderTextColor={colors.textColor}
+        placeholderTextColor={colors.placeHolder}
         secureTextEntry={secure}
         textColor={colors.textColor}
         style={styles.textInputStyle}

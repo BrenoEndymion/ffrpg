@@ -5,7 +5,6 @@ import fonts from '../../config/fonts'
 
 export const Input = styled.TextInput`
     font-size: ${fonts.textInput}px;
-    fontFamily: ${fonts.regular};
     height: 50px;
     margin: 7px 0 7px 0;
     padding: 0 15px;
@@ -16,7 +15,6 @@ export const Input = styled.TextInput`
 
 export const InputWhite = styled.TextInput`
     font-size: ${fonts.textInput}px;
-    fontFamily: ${fonts.regular};
     height: 45px;
     margin: 7px 0 7px 0;
     padding: 0 15px;
