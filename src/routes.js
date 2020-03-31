@@ -17,7 +17,7 @@ const Routes = () => (
           <Scene key="login" component={Login} hideNavBar={true} />
           <Scene key="signup" component={Signup} hideNavBar={true} />
 
-          <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.blueDefault} tabBarPosition={"bottom"} hideNavBar={true} initial >
+          <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} initial >
 
             <Scene key="home" component={Home} icon={({ tintColor }) => <Icon name="home" color={tintColor} />} hideNavBar={true} />
 

@@ -28,7 +28,7 @@ const S = StyleSheet.create({
         flexDirection: "row",
         height: 52,
         elevation: 2,
-        alignItems: "center"
+        alignItems: "center",
     },
     tabButton: { flex: 1 },
     spotLight: {
@@ -40,7 +40,7 @@ const S = StyleSheet.create({
     spotLightInner: {
         width: 48,
         height: 48,
-        backgroundColor: colors.greenDefault,
+        backgroundColor: colors.blueDefault,
         borderRadius: 24
     },
     scaler: { flex: 1, alignItems: "center", justifyContent: "center" }

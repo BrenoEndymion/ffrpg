@@ -24,9 +24,9 @@ export const BtnDefault = ({ icon, name, onPress }) => (
 
 export const BtnDefaultCircle = () => (
     <Container>
-        <BtnDefaultCircle>
+        <BtnCircle>
             <Icon name={'ios-arrow-round-forward'} color={colors.white} size={45} />
-        </BtnDefaultCircle>
+        </BtnCircle>
     </Container>
 )
 
