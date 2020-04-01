@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
+import CreateHero from './pages/CreateHero'
 import colors from "./config/colors"
 
 import Icon from "./components/Icons"
@@ -18,8 +19,9 @@ const Routes = () => (
           <Scene key="login" component={Login} hideNavBar={true} />
           <Scene key="signup" component={Signup} hideNavBar={true} />
           <Scene key="profile" component={Profile} hideNavBar={true} />
+          <Scene key="createhero" component={CreateHero} hideNavBar={true} initial />
 
-          <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} initial >
+          <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} >
 
             <Scene
              key="home" 
