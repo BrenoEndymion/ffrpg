@@ -22,13 +22,20 @@ import { AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } 
 import {Header} from "react-native-elements";
 import colors from '../config/colors';
 import Icon from "../components/Icons"
+import ProgressLoader from 'rn-progress-loader';
 
 export default function Home(props) {
   
     const [hasHero, setHasHero] = useState(false);
+    const [visible, setVisible] = useState(false);
 
     return (
         <Container>
+          <ProgressLoader
+                visible={visible}
+                isModal={true} isHUD={true}
+                hudColor={"#000000"}
+                color={"#FFFFFF"} />
           <Header
               //leftComponent={<GoBack />}
               statusBarProps={{ barStyle: 'light-content' }}

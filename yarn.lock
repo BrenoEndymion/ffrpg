@@ -6189,6 +6189,11 @@ rimraf@~2.2.6:
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
 
+rn-progress-loader@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/rn-progress-loader/-/rn-progress-loader-1.0.8.tgz#c670a690106c0be0d4346f651da11409865cd14c"
+  integrity sha512-Cg071qopEOL0pSzN0EL2U7TCZ0Z25ZSRWi5387aqeTU/38JjTpAtDaZ2nJ/tfaM3fZqOHMeLr20FiOHB1RwQTQ==
+
 rollup-plugin-typescript2@^0.25.2:
   version "0.25.3"
   resolved "https://registry.yarnpkg.com/rollup-plugin-typescript2/-/rollup-plugin-typescript2-0.25.3.tgz#a5fb2f0f85488789334ce540abe6c7011cbdf40f"
