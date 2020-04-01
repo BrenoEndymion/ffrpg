@@ -41,7 +41,7 @@ export default function Login(props) {
                     <TextInput 
                     style ={styles.inputStyle} 
                     placeholder="Digite a sua senha "
-                    
+                    secure={true}
                     />
                 </Margin>
 
