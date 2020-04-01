@@ -4,7 +4,7 @@ import colors from '../config/colors';
 
 import { Container, Input, InputWhite } from './styles/TextInputsStyles';
 
-export const TextInput = ({ placeholder, secure,onChangeText }) => (
+export const TextInput = ({ placeholder, secure,onChangeText, editable }) => (
     <Input
         placeholder={placeholder}
         placeholderTextColor={colors.placeHolder}
@@ -12,6 +12,7 @@ export const TextInput = ({ placeholder, secure,onChangeText }) => (
         textColor={colors.textColor}
         style={styles.textInputStyle}
         onChangeText={onChangeText}
+        editable = {editable}
     />
 )
 

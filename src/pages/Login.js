@@ -32,6 +32,7 @@ export default function Login(props) {
 
             <View style={styles.containerInputs}>
                 <Margin>
+                    
                     <TextInput
                     style ={styles.inputStyle} 
                     placeholder="Digite o seu e-mail"
@@ -43,6 +44,7 @@ export default function Login(props) {
                     
                     />
                 </Margin>
+
                 <BtnDefault                  
                     style={styles.enter}
                     name="Entrar" />
