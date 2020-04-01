@@ -6,7 +6,8 @@ import {
   View,
   Text,
   StatusBar,
-  FlatList
+  FlatList,
+  KeyboardAvoidingView,
 } from 'react-native';
 
 import { ImageView, Image, BtnB } from './styles/SignupStyles';
@@ -108,11 +109,11 @@ export default function Signup(props) {
     renderInputList = (item, index) => (
 
         <Margin>
-
-            {index == 2 ? <Dropdown /> : index == 5 ? <DatePicker /> : 
-                <TextInput placeholder={item.field} secure={item.secure} onChangeText={text => checkArray(item.id, text)} /> 
-            }
-
+            <KeyboardAvoidingView>
+                {index == 2 ? <Dropdown /> : index == 5 ? <DatePicker /> : 
+                    <TextInput placeholder={item.field} secure={item.secure} onChangeText={text => checkArray(item.id, text)} /> 
+                }
+            </KeyboardAvoidingView>
         </Margin>
     )
 
@@ -140,7 +141,7 @@ export default function Signup(props) {
 
                 {/* <SafeAreaView style={styles.safeAreaView}> */}
 
-
+                
                 <FlatList
                     style={styles.list}
                     data={fields}
