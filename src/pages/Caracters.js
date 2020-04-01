@@ -11,7 +11,7 @@ import {
   Button,
 } from 'react-native';
 
-import { Image, ImageView, TextWelcome } from './styles/LoginStyles';
+import { Image, ImageViewOp, TextWelcome } from './styles/LoginStyles';
 import { TextInput, TextInputWhite } from '../components/TextInputs';
 import { BtnDefault } from "../components/Buttons";
 import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
@@ -22,11 +22,12 @@ import RNPickerSelect from 'react-native-picker-select';
 import fonts from '../config/fonts';
 import metrics from '../config/metrics';
 import {Divider} from "react-native-elements";
-
+import imagePicker from 'react-native-image-picker';
 
 export default function Caracters(props) {
 
     const [preview, setPreview] = useState(null);
+    const [imageThumb, setImageThumb] = useState(null);
 
     handleSelect = () => {
         imagePicker.showImagePicker({
@@ -81,6 +82,19 @@ export default function Caracters(props) {
             />
     );
 
+    AboveFlatList = () => (
+        <>
+            <MarginTop />
+
+            <AlignCenter>
+                <ImageViewOp onPress={() => { handleSelect()}} >
+                    {preview != null ? <Image source={preview} /> : console.log('') }
+                </ImageViewOp>
+            </AlignCenter>
+
+            <MarginBottom />
+        </>
+    )
     return (
         <>
         <MarginTop />
@@ -89,13 +103,7 @@ export default function Caracters(props) {
                 <SafeAreaView>
                     <Margin>
                         <Scroll>
-                            <AlignCenter>
-                                <TouchableOpacity onPress={() => { handles}} >
-                                <ImageView>
-                                    {preview != null ? <Image source={preview} /> : console.log('') }
-                                </ImageView>
-                                </TouchableOpacity>
-                            </AlignCenter>    
+                            <AboveFlatList />  
                             <Hoshi
                                 label={'Nome'}
                                 style={styles.inputStyle}

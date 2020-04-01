@@ -2,7 +2,10 @@ import styled from 'styled-components/native';
 import colors from '../../config/colors'
 import fonts from '../../config/fonts'
 
-export const Image = styled.Image``;
+export const Image = styled.Image`
+    flex: 1;
+    border-radius: 40px;
+`;
 export const TextWelcome = styled.Text`
     font-size: ${fonts.big}px;
     font-family: ${fonts.regular}
@@ -15,6 +18,13 @@ export const ImageView = styled.View`
     border-radius: 40px;
     align-items: center;
     justify-content: center;
+`;
+
+export const ImageViewOp = styled.TouchableOpacity`
+    background-color: #ECF1F8;
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
 `;
 
 export const Container = styled.View`flex:1`;
