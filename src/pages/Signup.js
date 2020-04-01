@@ -22,10 +22,11 @@ import metrics from '../config/metrics';
 import RNPickerSelect from 'react-native-picker-select';
 import { Actions } from 'react-native-router-flux';
 
+
 export default function Signup(props) {
 
     const [preview, setPreview] = useState(null);
-    
+    const [imageThumb, setImageThumb] = useState(null);
 
     const fields = [
         {
@@ -105,6 +106,44 @@ export default function Signup(props) {
             />
         );
     };
+
+    handleSelect = () => {
+        imagePicker.showImagePicker({
+            title: 'Selecionar Imagem',
+        }, upload => {
+            if(upload.error){
+                console.log('erro imagem');
+            }else if(upload.didCancel){
+                console.log('usuário cancelou');
+            }else{
+                 const prev = {
+                    //uri: `data:image/jpeg;base64,${upload.data}`,
+                    uri: upload.uri,
+                };
+
+                let prefix;
+                let ext;
+
+                if(upload.fileName){
+                    [prefix, ext] = upload.fileName.split('.');
+                    ext= ext.toLowerCase() === 'heic' ? 'jpg' : ext;
+                }else{
+                    prefix = new Date().getTime();
+                    ext = 'jpg';
+                }
+
+                const imagethumb = {
+                    uri: upload.uri,
+                    type: upload.type,
+                    name: `${prefix}.${ext}`,
+                };
+
+                console.log(prev);
+                setPreview(prev);
+                setImageThumb(imagethumb);
+            }
+        })
+    }
 
     renderInputList = (item, index) => (
 

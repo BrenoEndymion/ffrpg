@@ -11,6 +11,7 @@ import TabBar from "react-native-underline-tabbar";
 import colors from '../config/colors';
 import fonts from '../config/fonts';
 import Login from './Login';
+import Caracters from './Caracters';
 
 export default function CreateHero(pro) {
 
@@ -31,9 +32,9 @@ export default function CreateHero(pro) {
             </SafeAreaView>
             <ScrollableTabView
                 tabBarInactiveTextColor={colors.white}
-                tabBarActiveTextColor={colors.white}
+                tabBarActiveTextColor={colors.blueActive}
                 renderTabBar={() => <TabBar tabStyles={{ tab: {} }} tabMargin={25} underlineHeight={3} tabBarStyle={{ backgroundColor: colors.blueDefault, marginTop: 0 }} tabBarTextStyle={{ fontSize: fonts.small }} underlineColor={colors.white} />}>
-                <Login tabLabel={{ label: "Características" }} label="Page #1" />
+                <Caracters tabLabel={{ label: "Características" }} label="Page #1" />
                 <Login tabLabel={{ label: "Atributos" }} label="Page #2" />
                 <Login tabLabel={{ label: "Essências" }} label="Page #3" />
                 <Login tabLabel={{ label: "Perícias" }} label="Page #4" />
