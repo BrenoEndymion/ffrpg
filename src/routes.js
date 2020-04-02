@@ -13,6 +13,7 @@ import TabBar from "./components/TabBar"
 
 //screen of creation hero
 import Caraters from './pages/Caracters';
+import CreateHero from './pages/CreateHero';
 
 const Routes = () => (
     <Router>
