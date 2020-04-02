@@ -5,7 +5,9 @@ const colors = {
   brown: '#795548',
   gray: '#9e9e9e',
   blueDefault: '#03a9f4',
-  placeHolder: '#bdbdbd'
+  placeHolder: '#bdbdbd',
+  grayWhite: '#6a7989',
+  blueActive: '#3D4490'
 };
 
 export default colors;

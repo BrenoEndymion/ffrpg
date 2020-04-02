@@ -1,5 +1,5 @@
 package com.ffrpg;
-
+import com.imagepicker.ImagePickerPackage;
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {

@@ -1093,6 +1093,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.0.0.tgz#ae9a430f2c5795debca491f15a989fce86ea75a0"
   integrity sha512-GLhSN8dRt4lpixPQh+8prSCy6PYk/MT/mvji/ojAd5yshowDo6HFsimCSTD/uWAdjpUq91XK9tVdTNWfGRlKQA==
 
+"@react-native-community/viewpager@^2.0.1":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/viewpager/-/viewpager-2.0.2.tgz#622b190294b1310c4825c98daeaee1c8443f7124"
+  integrity sha512-CKVhIZdX/Cmb80muog8sKpi5vM8npwFp4tx4Dj1IvTBidZweuO22+VH2rDOj7E0LzdV9IYRJ4FGBwcPBD2qUrQ==
+
 "@react-navigation/core@^3.7.1":
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.7.1.tgz#4dbb6a72ddb411e68f7918bc35db8f9f900fdaeb"
@@ -2245,7 +2250,7 @@ cosmiconfig@^5.0.5, cosmiconfig@^5.1.0:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-create-react-class@^15.6.3:
+create-react-class@^15.6.2, create-react-class@^15.6.3:
   version "15.6.3"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -5642,7 +5647,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5735,6 +5740,11 @@ react-native-gesture-handler@^1.6.1:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-image-picker@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-2.3.1.tgz#1977b65e07793d2c0b2d1976fb675c5f75ad7f11"
+  integrity sha512-c/a2h7/T7yBo5KlNQhcSn4xf4+6Li6LfJ59+GZT1ZzzWrj/6X8DiJ/TJBOlOZMC5tJriZKuRkWSsr74k6z+brw==
+
 react-native-picker-select@^6.6.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/react-native-picker-select/-/react-native-picker-select-6.6.0.tgz#a424e2a68dae228c492684a41745c0194cee01f0"
@@ -5796,6 +5806,16 @@ react-native-screens@^2.4.0:
   dependencies:
     debounce "^1.2.0"
 
+react-native-scrollable-tab-view@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-scrollable-tab-view/-/react-native-scrollable-tab-view-1.0.0.tgz#87319896067f7bb643ecd7fba2cba4d6d8f9e18b"
+  integrity sha512-lpZ9xz+PBdgSzpk93VjCIfxV0zvJDX9iEUP8ImDg3p1QJGHOWbWyfDx+lcx5VCDVrrdZdtuVAAdc0tkYXZyQDw==
+  dependencies:
+    "@react-native-community/viewpager" "^2.0.1"
+    create-react-class "^15.6.2"
+    prop-types "^15.6.0"
+    react-timer-mixin "^0.13.3"
+
 react-native-status-bar-height@^2.2.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.5.0.tgz#bc0fb85230603850aab9667ee8111a62954de90c"
@@ -5805,6 +5825,16 @@ react-native-tab-view@^2.11.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.13.0.tgz#23037aa43b0f8f682ddc20415a4baaaf6f82ae8f"
   integrity sha512-AeYbp/u91+D/C9+PmVEPBmFb3ixv8IkLMC3Sc5MajJ/fg0Zl3Of+BcEknBvTnKoe7Fj2y8+Qf9zorBbh5xzh4A==
+
+react-native-textinput-effects@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-textinput-effects/-/react-native-textinput-effects-0.5.1.tgz#52b54bb56b58a4b67b5d3fa4ffccba3d288cd8c9"
+  integrity sha512-9ywFH1S4WV/IkYcGwFYZrOYx5j84WvbhzWbLO52rN1PxgjI1tfZu8c5Ju8fsA7eLKuXt7YRen4iVTYYahrFq1w==
+
+react-native-underline-tabbar@^1.3.6:
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/react-native-underline-tabbar/-/react-native-underline-tabbar-1.3.6.tgz#9f442c200d3935fdf28ef0da6052f991da186759"
+  integrity sha512-4s9ydeFacPomdfrGBuCWbJzbhSs+JaJSyI2O5s0le9ocm88edenbwrk7w9NKWRN8dT4ZV9v6iq74uO3Io/Exxw==
 
 react-native-vector-icons@^6.6.0:
   version "6.6.0"
@@ -5904,6 +5934,11 @@ react-test-renderer@16.11.0:
     prop-types "^15.6.2"
     react-is "^16.8.6"
     scheduler "^0.17.0"
+
+react-timer-mixin@^0.13.3:
+  version "0.13.4"
+  resolved "https://registry.yarnpkg.com/react-timer-mixin/-/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
+  integrity sha512-4+ow23tp/Tv7hBM5Az5/Be/eKKF7DIvJ09voz5LyHGQaqqz9WV8YMs31eFvcYQs7d451LSg7kDJV70XYN/Ug/Q==
 
 react@16.11.0:
   version "16.11.0"

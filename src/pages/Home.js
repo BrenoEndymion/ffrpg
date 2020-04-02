@@ -23,6 +23,7 @@ import {Header} from "react-native-elements";
 import colors from '../config/colors';
 import Icon from "../components/Icons"
 import ProgressLoader from 'rn-progress-loader';
+import { Actions } from 'react-native-router-flux';
 
 export default function Home(props) {
   
@@ -49,7 +50,7 @@ export default function Home(props) {
           { !hasHero &&
             <Margin style={styles.nochar}>
               <ShaddowGreen>
-                <BtnCircle onPress={() => console.log("clicado")} ><Icon name="plus" color={{color: colors.blueDefault }} /></BtnCircle>
+                <BtnCircle onPress={() => Actions.createhero()} ><Icon name="plus" color={{color: colors.blueDefault }} /></BtnCircle>
               </ShaddowGreen>
             </Margin>
           }

@@ -6,7 +6,8 @@ import{
   View,
   Text,
   StatusBar,
-  FlatList
+  FlatList,
+  KeyboardAvoidingView
 } from 'react-native';
 
 import {ImageView, Image ,BtnB  } from './styles/ProfileStyles';
@@ -134,18 +135,18 @@ export default function Profile(props){
 
                 {/* <SafeAreaView style={styles.safeAreaView}> */}
 
-
-                <FlatList
-                    style={styles.list}
-                    data={fields}
-                    keyExtractor={(item, index) => item.id.toString()}
-                    renderItem={({ item, index }) => (
-                        renderInputList(item, index)
-                    )}
-                    ListHeaderComponent={aboveFlatList}
-                    ListFooterComponent={belowFlatList}
-                />
-
+                <KeyboardAvoidingView>
+                    <FlatList
+                        style={styles.list}
+                        data={fields}
+                        keyExtractor={(item, index) => item.id.toString()}
+                        renderItem={({ item, index }) => (
+                            renderInputList(item, index)
+                        )}
+                        ListHeaderComponent={aboveFlatList}
+                        ListFooterComponent={belowFlatList}
+                    />
+                </KeyboardAvoidingView>
                 {/* </SafeAreaView> */}
             </Container>
         </>
