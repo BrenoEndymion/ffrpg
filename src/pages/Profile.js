@@ -39,7 +39,7 @@ export default function Profile(props){
         {
             "id": 2,
             "field": "senha",
-            "secure": false,
+            "secure": true,
 
         },
         {

@@ -1,12 +1,12 @@
-import React from 'react';
-import { StyleSheet, Image } from 'react-native';
-import { Scene, Router, Stack } from 'react-native-router-flux';
+import React from 'react'
+import { StyleSheet, Image } from 'react-native'
+import { Scene, Router, Stack } from 'react-native-router-flux'
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Profile from './pages/Profile';
-import colors from "./config/colors"
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import Profile from './pages/Profile'
+import colors from './config/colors'
 
 import Icon from "./components/Icons"
 import TabBar from "./components/TabBar"
