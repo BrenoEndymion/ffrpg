@@ -23,7 +23,6 @@ import fonts from '../config/fonts';
 import metrics from '../config/metrics';
 import {Divider} from "react-native-elements";
 import imagePicker from 'react-native-image-picker';
-import { TextBtn } from '../components/styles/ButtonsStyles';
 
 export default function Caracters(props) {
 
@@ -104,9 +103,11 @@ export default function Caracters(props) {
                 <SafeAreaView>
                     <Margin>
                         <Scroll>
-                            <AboveFlatList />  
+                            <AboveFlatList /> 
+                           <View style={styles.FisicAtrributes}> 
+                             <Text style={styles.FisicAtrributesText}>Atributos</Text>
                             <Hoshi
-                                label={'Nome'}
+                                label={'Força'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
                                 borderColor={colors.blueDefault}
@@ -116,56 +117,11 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
-                            />
-                            
-                            <RNPickerSelect
-                                textInputProps={styles.pickerSelect}
-                                placeholder={{
-                                    label: 'Raça',
-                                    value: 'Raça',
-                                    color: '#000'
-                                }}
-                                onValueChange={(value) => console.log(value)}
-                                items={[
-                                    { label: 'Humano', value: 'Humano', key: '0' },
-                                    { label: 'Bangaa', value: 'Bangaa', key: '1' },
-                                    { label: 'Creimire', value: 'Creimire', key: '2' },
-                                    { label: 'Anão', value: 'Anão', key: '3' },
-                                    { label: 'Elfo', value: 'Elfo', key: '4' },
-                                    { label: 'Galka', value: 'Galka', key: '5' },
-                                    { label: 'Miqo’te', value: 'Miqote', key: '6' },
-                                    { label: 'Moogle', value: 'Moogle', key: '7' },
-                                    { label: 'Nu mou', value: 'Nu mou', key: '8' },
-                                    { label: 'Qu', value: 'Qu', key: '9' },
-                                    { label: 'Ronso', value: 'Ronso', key: '10' },
-                                    { label: 'Lalafell', value: 'Lalafell', key: '11' },
-                                    { label: 'Varg', value: 'Varg', key: '12' },
-                                    { label: 'Viera', value: 'Viera', key: '13' },
-                                    { label: 'Yeti', value: 'Yeti', key: '14' },
-                                ]}
-                            />
-                            <Divider style={{ backgroundColor: 'black' }} />
-                            <RNPickerSelect
-                                textInputProps={styles.pickerSelect}
-                                placeholder={{
-                                    label: 'Jobs',
-                                    value: 'Jobs',
-                                    color: '#000'
-                                }}
-                                onValueChange={(value) => console.log(value)}
-                                items={[
-                                    { label: 'Cavaleiro', value: 'Cavaleiro', key: '0' },
-                                    { label: 'Guerreiro', value: 'Guerreiro', key: '1' },
-                                    { label: 'Caçador', value: 'Caçador', key: '2' },
-                                    { label: 'Mago Negro', value: 'Mago Negro', key: '3' },
-                                    { label: 'Mago Branco', value: 'Mago Branco', key: '4' },
-                                    { label: 'Bardo', value: 'Bardo', key: '5' },
-                                    { label: 'Mago vermelho', value: 'Mago vermelho', key: '6' },
-                                ]}
-                            />
+                            />  
+                           
                             <Divider style={{ backgroundColor: 'black' }} />
                             <Hoshi
-                                label={'Idade'}
+                                label={'Destreza'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
                                 borderColor={colors.blueDefault}
@@ -177,7 +133,7 @@ export default function Caracters(props) {
                                 backgroundColor={colors.white}
                             />
                             <Hoshi
-                                label={'Sexo'}
+                                label={'Resistência'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
                                 borderColor={colors.blueDefault}
@@ -189,7 +145,7 @@ export default function Caracters(props) {
                                 backgroundColor={colors.white}
                             />
                             <Hoshi
-                                label={'Altura'}
+                                label={'Armadura'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
                                 borderColor={colors.blueDefault}
@@ -201,7 +157,7 @@ export default function Caracters(props) {
                                 backgroundColor={colors.white}
                             />
                             <Hoshi
-                                label={'Peso'}
+                                label={'Poder de Fogo'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
                                 borderColor={colors.blueDefault}
@@ -212,42 +168,118 @@ export default function Caracters(props) {
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
                             />
-                            <Hoshi
-                                label={'Olhos'}
-                                style={styles.inputStyle}
-                                // this is used as active border color
-                                borderColor={colors.blueDefault}
-                                // active border height
-                                borderHeight={3}
-                                inputPadding={16}
-                                // this is used to set backgroundColor of label mask.
-                                // please pass the backgroundColor of your TextInput container.
-                                backgroundColor={colors.white}
-                            />
-                            <Hoshi
-                                label={'Cabelos'}
-                                style={styles.inputStyle}
-                                // this is used as active border color
-                                borderColor={colors.blueDefault}
-                                // active border height
-                                borderHeight={3}
-                                inputPadding={16}
-                                // this is used to set backgroundColor of label mask.
-                                // please pass the backgroundColor of your TextInput container.
-                                backgroundColor={colors.white}
-                            />
+                          </View>  
 
-                            <BtnDefault name={'Salvar'}
+                            <Divider style={{ backgroundColor: 'black' }} />
+
+                          <View style={styles.modifers}>
+                              <Text style={styles.ModifierText}>Modificadores</Text>
+                            <Hoshi
+                                label={'Força de ataque'}
+                                style={styles.inputStyle}
+                                // this is used as active border color
+                                borderColor={colors.blueDefault}
+                                // active border height
+                                borderHeight={3}
+                                inputPadding={16}
+                                // this is used to set backgroundColor of label mask.
+                                // please pass the backgroundColor of your TextInput container.
+                                backgroundColor={colors.white}
+                            />  
+
+                            <Hoshi
+                                label={'Defesa Física'}
+                                style={styles.inputStyle}
+                                // this is used as active border color
+                                borderColor={colors.blueDefault}
+                                // active border height
+                                borderHeight={3}
+                                inputPadding={16}
+                                // this is used to set backgroundColor of label mask.
+                                // please pass the backgroundColor of your TextInput container.
+                                backgroundColor={colors.white}
+                            />  
+
+                            <Hoshi
+                                label={'Defesa Mágica'}
+                                style={styles.inputStyle}
+                                // this is used as active border color
+                                borderColor={colors.blueDefault}
+                                // active border height
+                                borderHeight={3}
+                                inputPadding={16}
+                                // this is used to set backgroundColor of label mask.
+                                // please pass the backgroundColor of your TextInput container.
+                                backgroundColor={colors.white}
+                            />  
+
+                            <Hoshi
+                                label={'Evasão Física'}
+                                style={styles.inputStyle}
+                                // this is used as active border color
+                                borderColor={colors.blueDefault}
+                                // active border height
+                                borderHeight={3}
+                                inputPadding={16}
+                                // this is used to set backgroundColor of label mask.
+                                // please pass the backgroundColor of your TextInput container.
+                                backgroundColor={colors.white}
+                            />  
+
+                            <Hoshi
+                                label={'Evasão Mágica'}
+                                style={styles.inputStyle}
+                                // this is used as active border color
+                                borderColor={colors.blueDefault}
+                                // active border height
+                                borderHeight={3}
+                                inputPadding={16}
+                                // this is used to set backgroundColor of label mask.
+                                // please pass the backgroundColor of your TextInput container.
+                                backgroundColor={colors.white}
+                            />  
+                          </View>
+
+                          <View style={styles.StatusAtributes}>
+                            <Text style={styles.StatusText}>Status</Text>
+                              <Hoshi
+                                label={'Pontos de vida'}
+                                style={styles.inputStyle}
+                                // this is used as active border color
+                                borderColor={colors.blueDefault}
+                                // active border height
+                                borderHeight={3}
+                                inputPadding={16}
+                                // this is used to set backgroundColor of label mask.
+                                // please pass the backgroundColor of your TextInput container.
+                                backgroundColor={colors.white}
+                            />  
+
+                            <Hoshi
+                                label={'Pontos de Magia'}
+                                style={styles.inputStyle}
+                                // this is used as active border color
+                                borderColor={colors.blueDefault}
+                                // active border height
+                                borderHeight={3}
+                                inputPadding={16}
+                                // this is used to set backgroundColor of label mask.
+                                // please pass the backgroundColor of your TextInput container.
+                                backgroundColor={colors.white}
+                            />  
+
+                          </View>
+
+                             <BtnDefault name={'Salvar'}
                                 styles={styles.enter}
                                 onPress={()=>{}}
                                 TextBtn={'Salvar'}                         
-                            />
-
+                            />                          
+                           
                         </Scroll>
                     </Margin>        
                 </SafeAreaView>
             </View>
-
 
         </KeyboardAvoidingView>  
         </>
@@ -269,11 +301,12 @@ const styles = StyleSheet.create({
     }, 
     background:{
         flex:1,
-        justifyContent: 'center',  
+        justifyContent: 'center',
         marginBottom: 50,
     },
     inputStyle: {
         marginTop: 15,
+        
     },
     enter: {
         flex: 1,
@@ -281,6 +314,41 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         flexWrap: 'wrap',
+    },
+
+    modifers:{
+        marginTop: 50,
+    },
+
+    ModifierText: {
+        fontSize: 20,
+        color: colors.blueActive,
+        marginBottom: 20,
+        fontWeight: 'bold',
+        textAlign: 'center'
+      },
+
+    FisicAtrributes:{
+        marginTop: 20,
+    },
+
+    FisicAtrributesText: {
+        fontSize: 20,
+        color: colors.blueActive,
+        marginBottom: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    StatusAtributes:{
+        marginTop: 20,
+    },
+    StatusText: {
+        marginTop: 30,
+        fontSize: 20,
+        color: colors.blueActive,
+        marginBottom: 10,
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
 });
     
