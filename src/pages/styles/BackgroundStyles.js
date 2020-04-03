@@ -18,3 +18,11 @@ export const Nv = styled.Text`
     text-align: left;
     margin-top: 45px;
 `
+
+export const CardWhite = styled.View`
+    background-color: ${colors.grayLight}
+    max-height: 300px;
+    padding: 15px;
+    border-radius: ${metrics.baseRadius}px;
+    justify-content: space-between;
+`;

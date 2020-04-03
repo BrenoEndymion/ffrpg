@@ -11,7 +11,7 @@ import {
   Button,
 } from 'react-native';
 
-import { Image, ImageViewOp, TextWelcome } from './styles/LoginStyles';
+import { CardWhite } from './styles/AbilityStyles';
 import { TextInput, TextInputWhite } from '../components/TextInputs';
 import { BtnDefault } from "../components/Buttons";
 import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin, Horizontal } from '../components/styles/general';
@@ -26,62 +26,18 @@ import imagePicker from 'react-native-image-picker';
 
 export default function Caracters(props) {
 
-    const [preview, setPreview] = useState(null);
-    const [imageThumb, setImageThumb] = useState(null);
-
-    
     return (
         <>
         <MarginTop />
         <KeyboardAvoidingView style={styles.background}>
-            <View style={styles.containerInputs}>
-                <SafeAreaView>
-                    <Margin>
-                        <Scroll>
-                           <View style={styles.fireElement}> 
-                             <Text style={styles.fireElementText}>Fogo</Text>
-                             <Horizontal>
-                                <Hoshi
-                                    label={'Intemidação'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />  
-                            
-                                <Hoshi
-                                    label={'Percepção'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-                                <Hoshi
-                                    label={'Tecnologia'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-                            </Horizontal>
+            <SafeAreaView>
+                <Margin>
+                    <Scroll>
+                        <Text style={styles.elementText}>Habilidades</Text>
+                        <CardWhite>
                             <Horizontal>
                                 <Hoshi
-                                    label={'Determinação'}
+                                    label={'Nome'}
                                     style={styles.inputStyle}
                                     // this is used as active border color
                                     borderColor={colors.blueDefault}
@@ -90,68 +46,10 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-
-                                <Hoshi
-                                    label={'Engenharia'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-
-                                <Hoshi
-                                    label={'Armas'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-                           </Horizontal>
-                          </View>  
-
-                    
-                          <View style={styles.waterElement}>
-                            <Text style={styles.waterElementText}>Água</Text>
-                            <Horizontal>
-                                <Hoshi
-                                    label={'Sabedoria'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
+                                    backgroundColor={colors.grayLight}
                                 />  
-                            
-                            <Hoshi
-                                    label={'Infiltração'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
                                 <Hoshi
-                                    label={'Carisma'}
+                                    label={'Tipo'}
                                     style={styles.inputStyle}
                                     // this is used as active border color
                                     borderColor={colors.blueDefault}
@@ -160,12 +58,12 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
+                                    backgroundColor={colors.grayLight}
                                 />  
                             </Horizontal>
                             <Horizontal>
                                 <Hoshi
-                                    label={'Atuação'}
+                                    label={'Custo'}
                                     style={styles.inputStyle}
                                     // this is used as active border color
                                     borderColor={colors.blueDefault}
@@ -174,11 +72,10 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
+                                    backgroundColor={colors.grayLight}
                                 />  
-
                                 <Hoshi
-                                    label={'Magia'}
+                                    label={'Alvo'}
                                     style={styles.inputStyle}
                                     // this is used as active border color
                                     borderColor={colors.blueDefault}
@@ -187,165 +84,32 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
+                                    backgroundColor={colors.grayLight}
                                 />  
-
-                                <Hoshi
-                                    label={'Medicina'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />                         
-                            </Horizontal>
-                          </View>
-
-                          <View style={styles.AirElement}>
-                            <Text style={styles.airElementText}>Ar</Text>
-                            <Horizontal>
-                                <Hoshi
-                                    label={'Atletismo'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />  
-                            
-                                <Hoshi
-                                    label={'Furtividade'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-                                <Hoshi
-                                    label={'Pilotagem'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-                            </Horizontal>
-                            <Horizontal>    
-                                <Hoshi
-                                    label={'Ladinagem'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                /> 
-
-                                <Hoshi
-                                    label={'Acrobacia'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                /> 
-
-                                <Hoshi
-                                    label={'Labia'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-                            </Horizontal> 
-                          </View>
-
-                          <View style={styles.earthElement}>
-                            <Text style={styles.earthElementText}>Terra</Text>
-                            <Horizontal>
-                                <Hoshi
-                                    label={'Tolerância'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />  
-                            
-                                <Hoshi
-                                    label={'Cavalgar'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-                                
-                                <Hoshi
-                                    label={'Adestrar Animais'}
-                                    style={styles.inputStyle}
-                                    // this is used as active border color
-                                    borderColor={colors.blueDefault}
-                                    // active border height
-                                    borderHeight={3}
-                                    inputPadding={16}
-                                    // this is used to set backgroundColor of label mask.
-                                    // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                /> 
                             </Horizontal>
                             <Horizontal>
                                 <Hoshi
-                                    label={'Armadilhas'}
+                                    label={'Efeito'}
                                     style={styles.inputStyle}
                                     // this is used as active border color
                                     borderColor={colors.blueDefault}
                                     // active border height
                                     borderHeight={3}
                                     inputPadding={16}
+                                    multiline = {true}
+                                    numberOfLines = {4}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                /> 
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                        </CardWhite>    
 
+                        <Text style={styles.elementText}></Text>
+                        <CardWhite>
+                            <Horizontal>
                                 <Hoshi
-                                    label={'Ciências'}
+                                    label={'Nome'}
                                     style={styles.inputStyle}
                                     // this is used as active border color
                                     borderColor={colors.blueDefault}
@@ -354,103 +118,384 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.white}
-                                />
-                            </Horizontal> 
-                          </View>
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Tipo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Custo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Alvo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Efeito'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    multiline = {true}
+                                    numberOfLines = {4}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                        </CardWhite>  
+                        <Text style={styles.elementText}></Text>
+                        <CardWhite>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Nome'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Tipo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Custo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Alvo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Efeito'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    multiline = {true}
+                                    numberOfLines = {4}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                        </CardWhite>  
 
-                             {/*}<BtnDefault name={'Salvar'}
-                                styles={styles.enter}
-                                onPress={()=>{}}
-                                TextBtn={'Salvar'}                         
-                            />  {*/}                        
-                           
-                        </Scroll>
-                    </Margin>        
-                </SafeAreaView>
-            </View>
+                        <Text style={styles.elementText}></Text>
+                        <CardWhite>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Nome'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Tipo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Custo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Alvo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Efeito'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    multiline = {true}
+                                    numberOfLines = {4}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                        </CardWhite>  
 
+                        <Text style={styles.elementText}></Text>
+                        <CardWhite>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Nome'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Tipo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Custo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Alvo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Efeito'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    multiline = {true}
+                                    numberOfLines = {4}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                        </CardWhite>  
+
+                        <Text style={styles.elementText}></Text>
+                        <CardWhite>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Nome'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Tipo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Custo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                                <Hoshi
+                                    label={'Alvo'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                            <Horizontal>
+                                <Hoshi
+                                    label={'Efeito'}
+                                    style={styles.inputStyle}
+                                    // this is used as active border color
+                                    borderColor={colors.blueDefault}
+                                    // active border height
+                                    borderHeight={3}
+                                    inputPadding={16}
+                                    multiline = {true}
+                                    numberOfLines = {4}
+                                    // this is used to set backgroundColor of label mask.
+                                    // please pass the backgroundColor of your TextInput container.
+                                    backgroundColor={colors.grayLight}
+                                />  
+                            </Horizontal>
+                        </CardWhite>  
+
+                        
+                    </Scroll>
+                </Margin>        
+            </SafeAreaView>
         </KeyboardAvoidingView>  
         </>
     );
 }
 
 const styles = StyleSheet.create({
-    pickerSelect: {
-        fontSize: fonts.textInput,
-        height: 50,
-        fontWeight: 'bold',
-        color: colors.grayWhite,
-        marginTop: 7,
-        marginBottom: 7,
-        padding: 15,
-        borderRadius: metrics.baseRadius,
-        backgroundColor: colors.white,
-        justifyContent: 'center',
-    }, 
     background:{
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         marginBottom: 50,
     },
     inputStyle: {
-        marginTop: 15,
-        flex:1,
-    },
-    enter: {
         flex: 1,
-        width: '100%',
-        marginTop: 10,
-        marginBottom: 10,
-        flexWrap: 'wrap',
+        marginTop: 15,
+        
     },
-
-    fireElement:{
+    element:{
         marginTop: 50,
     },
 
-    fireElementText: {
+    elementText: {
         fontSize: 20,
         color: colors.blueActive,
         marginBottom: 20,
+        marginTop: 20,
         fontWeight: 'bold',
         textAlign: 'center'
       },
-
-    waterElement:{
-        marginTop: 20,
-    },
-
-    waterElementText: {
-        fontSize: 20,
-        color: colors.blueActive,
-        marginBottom: 20,
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-    AirElement:{
-        marginTop: 20,
-    },
-    airElementText: {
-        marginTop: 30,
-        fontSize: 20,
-        color: colors.blueActive,
-        marginBottom: 10,
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-
-    earthElement:{
-        marginTop: 20,
-    },
-    earthElementText: {
-        marginTop: 30,
-        fontSize: 20,
-        color: colors.blueActive,
-        marginBottom: 10,
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
 });
     
   

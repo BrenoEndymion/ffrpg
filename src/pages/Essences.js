@@ -12,9 +12,10 @@ import {
 } from 'react-native';
 
 import { Image, ImageViewOp, TextWelcome } from './styles/LoginStyles';
+import { Nv } from './styles/EssencesStyles';
 import { TextInput, TextInputWhite } from '../components/TextInputs';
 import { BtnDefault } from "../components/Buttons";
-import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
+import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin, Horizontal } from '../components/styles/general';
 import { Hoshi } from 'react-native-textinput-effects';
 import colors from '../config/colors';
 import {Scroll} from './styles/CaractersStyles';
@@ -103,10 +104,10 @@ export default function Caracters(props) {
                 <SafeAreaView>
                     <Margin>
                         <Scroll>
-                            <AboveFlatList /> 
                            <View style={styles.fireElement}> 
                              <Text style={styles.fireElementText}>Fogo</Text>
-                            <Hoshi
+                             <Horizontal>
+                            {/*}<Hoshi
                                 label={'Pontos de Experiência'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
@@ -118,10 +119,9 @@ export default function Caracters(props) {
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
                             />  
-                           
-                            <Divider style={{ backgroundColor: 'black' }} />
+    {*/}
                             <Hoshi
-                                label={'Pontos Obtidos'}
+                                label={'Pontos'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
                                 borderColor={colors.blueDefault}
@@ -131,8 +131,10 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                keyboardType={'numeric'}
                             />
-                            <Hoshi
+                            <Nv style={styles.nvStyle}>Nível: X</Nv>
+                            {/*}<Hoshi
                                 label={'Nível'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
@@ -143,15 +145,15 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
-                            />
-                           
+/>{*/}
+                           </Horizontal>
                           </View>  
 
-                            <Divider style={{ backgroundColor: 'black' }} />
 
-                          <View style={styles.waterElement}>
-                              <Text style={styles.waterElementText}>Água</Text>
-                              <Hoshi
+                          <View style={styles.fireElement}> 
+                             <Text style={styles.fireElementText}>Água</Text>
+                             <Horizontal>
+                            {/*}<Hoshi
                                 label={'Pontos de Experiência'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
@@ -163,10 +165,9 @@ export default function Caracters(props) {
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
                             />  
-                           
-                            <Divider style={{ backgroundColor: 'black' }} />
+    {*/}
                             <Hoshi
-                                label={'Pontos Obtidos'}
+                                label={'Pontos'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
                                 borderColor={colors.blueDefault}
@@ -176,8 +177,10 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                keyboardType={'numeric'}
                             />
-                            <Hoshi
+                            <Nv style={styles.nvStyle}>Nível: X</Nv>
+                            {/*}<Hoshi
                                 label={'Nível'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
@@ -188,13 +191,14 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
-                            />                         
-                              
-                          </View>
-
-                          <View style={styles.AirElement}>
-                            <Text style={styles.airElementText}>Ar</Text>
-                            <Hoshi
+/>{*/}
+                           </Horizontal>
+                          </View>  
+                          
+                          <View style={styles.fireElement}> 
+                             <Text style={styles.fireElementText}>Ar</Text>
+                             <Horizontal>
+                            {/*}<Hoshi
                                 label={'Pontos de Experiência'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
@@ -206,10 +210,9 @@ export default function Caracters(props) {
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
                             />  
-                           
-                            <Divider style={{ backgroundColor: 'black' }} />
+    {*/}
                             <Hoshi
-                                label={'Pontos Obtidos'}
+                                label={'Pontos'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
                                 borderColor={colors.blueDefault}
@@ -219,8 +222,10 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                keyboardType={'numeric'}
                             />
-                            <Hoshi
+                            <Nv style={styles.nvStyle}>Nível: X</Nv>
+                            {/*}<Hoshi
                                 label={'Nível'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
@@ -231,12 +236,13 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
-                            /> 
-                          </View>
-
-                          <View style={styles.earthElement}>
-                            <Text style={styles.earthElementText}>Terra</Text>
-                            <Hoshi
+/>{*/}
+                           </Horizontal>
+                          </View>  
+                          <View style={styles.fireElement}> 
+                             <Text style={styles.fireElementText}>Terra</Text>
+                             <Horizontal>
+                            {/*}<Hoshi
                                 label={'Pontos de Experiência'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
@@ -248,10 +254,9 @@ export default function Caracters(props) {
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
                             />  
-                           
-                            <Divider style={{ backgroundColor: 'black' }} />
+    {*/}
                             <Hoshi
-                                label={'Pontos Obtidos'}
+                                label={'Pontos'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
                                 borderColor={colors.blueDefault}
@@ -261,8 +266,10 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                keyboardType={'numeric'}
                             />
-                            <Hoshi
+                            <Nv style={styles.nvStyle}>Nível: X</Nv>
+                            {/*}<Hoshi
                                 label={'Nível'}
                                 style={styles.inputStyle}
                                 // this is used as active border color
@@ -273,14 +280,15 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
-                            /> 
-                          </View>
+/>{*/}
+                           </Horizontal>
+                          </View>  
 
-                             <BtnDefault name={'Salvar'}
+                             {/*}<BtnDefault name={'Salvar'}
                                 styles={styles.enter}
                                 onPress={()=>{}}
                                 TextBtn={'Salvar'}                         
-                            />                          
+                            />      {*/}                    
                            
                         </Scroll>
                     </Margin>        
@@ -307,12 +315,15 @@ const styles = StyleSheet.create({
     }, 
     background:{
         flex:1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         marginBottom: 50,
     },
     inputStyle: {
         marginTop: 15,
-        
+        flex: 1,
+    },
+    nvStyle: {
+        flex:1,
     },
     enter: {
         flex: 1,
@@ -333,41 +344,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center'
       },
-
-    waterElement:{
-        marginTop: 20,
-    },
-
-    waterElementText: {
-        fontSize: 20,
-        color: colors.blueActive,
-        marginBottom: 20,
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-    AirElement:{
-        marginTop: 20,
-    },
-    airElementText: {
-        marginTop: 30,
-        fontSize: 20,
-        color: colors.blueActive,
-        marginBottom: 10,
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-
-    earthElement:{
-        marginTop: 20,
-    },
-    earthElementText: {
-        marginTop: 30,
-        fontSize: 20,
-        color: colors.blueActive,
-        marginBottom: 10,
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
 });
     
   

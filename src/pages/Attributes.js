@@ -97,15 +97,11 @@ export default function Caracters(props) {
     )
     return (
         <>
-        <MarginTop />
         <KeyboardAvoidingView style={styles.background}>
-            <View style={styles.containerInputs}>
                 <SafeAreaView>
                     <Margin>
                         <Scroll>
-                            <AboveFlatList /> 
                            <View style={styles.FisicAtrributes}> 
-                             <Text style={styles.FisicAtrributesText}>Atributos</Text>
                             <Hoshi
                                 label={'Força'}
                                 style={styles.inputStyle}
@@ -119,7 +115,6 @@ export default function Caracters(props) {
                                 backgroundColor={colors.white}
                             />  
                            
-                            <Divider style={{ backgroundColor: 'black' }} />
                             <Hoshi
                                 label={'Destreza'}
                                 style={styles.inputStyle}
@@ -170,9 +165,8 @@ export default function Caracters(props) {
                             />
                           </View>  
 
-                            <Divider style={{ backgroundColor: 'black' }} />
-
-                          <View style={styles.modifers}>
+                          
+                          {/*}<View style={styles.modifers}>
                               <Text style={styles.ModifierText}>Modificadores</Text>
                             <Hoshi
                                 label={'Força de ataque'}
@@ -238,7 +232,7 @@ export default function Caracters(props) {
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
                             />  
-                          </View>
+                            </View>
 
                           <View style={styles.StatusAtributes}>
                             <Text style={styles.StatusText}>Status</Text>
@@ -269,17 +263,16 @@ export default function Caracters(props) {
                             />  
 
                           </View>
-
+    
                              <BtnDefault name={'Salvar'}
                                 styles={styles.enter}
                                 onPress={()=>{}}
                                 TextBtn={'Salvar'}                         
                             />                          
-                           
+                           {*/}
                         </Scroll>
                     </Margin>        
                 </SafeAreaView>
-            </View>
 
         </KeyboardAvoidingView>  
         </>
@@ -301,7 +294,7 @@ const styles = StyleSheet.create({
     }, 
     background:{
         flex:1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         marginBottom: 50,
     },
     inputStyle: {

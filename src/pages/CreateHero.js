@@ -15,6 +15,11 @@ import Caracters from './Caracters';
 import Attributes from './Attributes';
 import Essences from './Essences';
 import Skill from './Skill';
+import Equipaments from './Equipaments';
+import Inventory from './Inventory';
+import Ability from './Ability';
+import Magics from './Magics';
+import Background from './Background';
 
 export default function CreateHero(pro) {
 
@@ -41,9 +46,11 @@ export default function CreateHero(pro) {
                 <Attributes tabLabel={{ label: "Atributos" }} label="Page #2" />
                 <Essences tabLabel={{ label: "Essências" }} label="Page #3" />
                 <Skill tabLabel={{ label: "Perícias" }} label="Page #4" />
-                <Login tabLabel={{ label: "Equipamentos" }} label="Page #5" />
-                <Login tabLabel={{ label: "Inventário" }} label="Page #6" />
-                <Login tabLabel={{ label: "Skills/Magias" }} label="Page #7" />
+                <Equipaments tabLabel={{ label: "Equipamentos" }} label="Page #5" />
+                <Inventory tabLabel={{ label: "Inventário" }} label="Page #6" />
+                <Ability tabLabel={{ label: "Skills" }} label="Page #7" />
+                <Magics tabLabel={{ label: "Magias" }} label="Page #8" />
+                <Background tabLabel={{ label: "Background" }} label="Page #8" />
                 {/*}<PatientProfile tabLabel={{ label: "PERFIL" }} label="Page #3" />{*/}
             </ScrollableTabView>
         </Container >

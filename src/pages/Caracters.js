@@ -237,11 +237,13 @@ export default function Caracters(props) {
                                 backgroundColor={colors.white}
                             />
 
+                            {/*}
                             <BtnDefault name={'Salvar'}
                                 styles={styles.enter}
                                 onPress={()=>{}}
                                 TextBtn={'Salvar'}                         
                             />
+                            {*/}
 
                         </Scroll>
                     </Margin>        
