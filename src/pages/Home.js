@@ -24,10 +24,25 @@ import colors from '../config/colors';
 import Icon from "../components/Icons"
 import ProgressLoader from 'rn-progress-loader';
 import { Actions } from 'react-native-router-flux';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+import TabBar from "react-native-underline-tabbar";
+import fonts from '../config/fonts';
+
+//pages
+import Caracters from './home/Caracters';
+import Attributes from './home/Attributes';
+import Essences from './home/Essences';
+import Skill from './home/Skill';
+import Equipaments from './home/Equipaments';
+import Inventory from './home/Inventory';
+import Ability from './home/Ability';
+import Magics from './home/Magics';
+import Background from './home/Background';
+import Status from './home/Status';
 
 export default function Home(props) {
   
-    const [hasHero, setHasHero] = useState(false);
+    const [hasHero, setHasHero] = useState(true);
     const [visible, setVisible] = useState(false);
 
     return (
@@ -55,45 +70,22 @@ export default function Home(props) {
             </Margin>
           }
           { hasHero && 
-            <SafeAreaView>
-              <ScrollView
-                contentInsetAdjustmentBehavior="automatic"
-                style={styles.scrollView}>
-                {global.HermesInternal == null ? null : (
-                  <View style={styles.engine}>
-                    <Text style={styles.footer}>Engine: Hermes</Text>
-                  </View>
-                )}
-                <View style={styles.body}>
-                  <View style={styles.sectionContainer}>
-                    <Text style={styles.sectionTitle}>Step One</Text>
-                    <Text style={styles.sectionDescription}>
-                      Edit <Text style={styles.highlight}>App.js</Text> to change this
-                      Maaah ta aqui a minha alteração.
-                    </Text>
-                  </View>
-                  <View style={styles.sectionContainer}>
-                    <Text style={styles.sectionTitle}>See Your Changes</Text>
-                    <Text style={styles.sectionDescription}>
-                      <ReloadInstructions />
-                    </Text>
-                  </View>
-                  <View style={styles.sectionContainer}>
-                    <Text style={styles.sectionTitle}>Debug</Text>
-                    <Text style={styles.sectionDescription}>
-                      <DebugInstructions />
-                    </Text>
-                  </View>
-                  <View style={styles.sectionContainer}>
-                    <Text style={styles.sectionTitle}>Learn More</Text>
-                    <Text style={styles.sectionDescription}>
-                      Read the docs to discover what to do next:
-                    </Text>
-                  </View>
-                  <LearnMoreLinks />
-                </View>
-              </ScrollView>
-            </SafeAreaView>
+              <ScrollableTabView
+                tabBarInactiveTextColor={colors.white}
+                tabBarActiveTextColor={colors.blueActive}
+                renderTabBar={() => <TabBar tabStyles={{ tab: {} }} tabMargin={25} underlineHeight={3} tabBarStyle={{ backgroundColor: colors.blueDefault, marginTop: 0 }} tabBarTextStyle={{ fontSize: fonts.small }} underlineColor={colors.white} />}>
+                <Status tabLabel={{ label: "Status" }} label="Page #1" />
+                <Caracters tabLabel={{ label: "Características" }} label="Page #1" />
+                <Attributes tabLabel={{ label: "Atributos" }} label="Page #2" />
+                <Essences tabLabel={{ label: "Essências" }} label="Page #3" />
+                <Skill tabLabel={{ label: "Perícias" }} label="Page #4" />
+                <Equipaments tabLabel={{ label: "Equipamentos" }} label="Page #5" />
+                <Inventory tabLabel={{ label: "Inventário" }} label="Page #6" />
+                <Ability tabLabel={{ label: "Skills" }} label="Page #7" />
+                <Magics tabLabel={{ label: "Magias" }} label="Page #8" />
+                <Background tabLabel={{ label: "Background" }} label="Page #9" />
+                {/*}<PatientProfile tabLabel={{ label: "PERFIL" }} label="Page #3" />{*/}
+              </ScrollableTabView>
           }
         </Container>
     );

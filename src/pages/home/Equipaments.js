@@ -12,15 +12,15 @@ import {
 } from 'react-native';
 
 import { CardWhite } from './styles/EquipamentsStyles';
-import { TextInput, TextInputWhite } from '../components/TextInputs';
-import { BtnDefault } from "../components/Buttons";
-import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin, Horizontal } from '../components/styles/general';
+import { TextInput, TextInputWhite } from '../../components/TextInputs';
+import { BtnDefault } from "../../components/Buttons";
+import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin, Horizontal } from '../../components/styles/general';
 import { Hoshi } from 'react-native-textinput-effects';
-import colors from '../config/colors';
+import colors from '../../config/colors';
 import {Scroll} from './styles/CaractersStyles';
 import RNPickerSelect from 'react-native-picker-select';
-import fonts from '../config/fonts';
-import metrics from '../config/metrics';
+import fonts from '../../config/fonts';
+import metrics from '../../config/metrics';
 import {Divider} from "react-native-elements";
 import imagePicker from 'react-native-image-picker';
 
@@ -46,7 +46,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -60,7 +60,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -87,7 +87,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -119,7 +119,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -131,7 +131,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -147,7 +147,7 @@ export default function Caracters(props) {
                                     numberOfLines = {4}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                         </CardWhite>    
@@ -165,7 +165,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -179,7 +179,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -206,7 +206,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -237,7 +237,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -249,7 +249,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -265,7 +265,7 @@ export default function Caracters(props) {
                                     numberOfLines = {4}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                         </CardWhite>    
@@ -283,7 +283,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -297,7 +297,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -324,7 +324,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -355,7 +355,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -367,7 +367,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -383,7 +383,7 @@ export default function Caracters(props) {
                                     numberOfLines = {4}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                         </CardWhite>    
@@ -401,7 +401,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -415,7 +415,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -442,7 +442,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -473,7 +473,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -485,7 +485,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -501,7 +501,7 @@ export default function Caracters(props) {
                                     numberOfLines = {4}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                         </CardWhite>    
@@ -519,7 +519,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -533,7 +533,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -560,7 +560,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -591,7 +591,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -603,7 +603,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -619,7 +619,7 @@ export default function Caracters(props) {
                                     numberOfLines = {4}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                         </CardWhite>   
@@ -636,7 +636,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -650,7 +650,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -677,7 +677,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -708,7 +708,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -720,7 +720,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -736,7 +736,7 @@ export default function Caracters(props) {
                                     numberOfLines = {4}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                         </CardWhite>    
@@ -754,7 +754,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -768,7 +768,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -795,7 +795,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -826,7 +826,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -838,7 +838,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -854,7 +854,7 @@ export default function Caracters(props) {
                                     numberOfLines = {4}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                         </CardWhite>    
@@ -872,7 +872,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -886,7 +886,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -913,7 +913,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <RNPickerSelect
                                     textInputProps={styles.pickerSelect}
@@ -944,7 +944,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -956,7 +956,7 @@ export default function Caracters(props) {
                                     inputPadding={16}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -972,7 +972,7 @@ export default function Caracters(props) {
                                     numberOfLines = {4}
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
-                                    backgroundColor={colors.grayLight}
+                                    backgroundColor={colors.white}
                                 />  
                             </Horizontal>
                         </CardWhite>     
@@ -1015,7 +1015,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         padding: 15,
         borderRadius: metrics.baseRadius,
-        backgroundColor: colors.grayLight,
+        backgroundColor: colors.white,
         justifyContent: 'center',
     }, 
 });

@@ -188,7 +188,6 @@ export default function Signup(props) {
                     renderItem={({ item, index }) => (
                         renderInputList(item, index)
                     )}
-                    ListHeaderComponent={aboveFlatList}
                     ListFooterComponent={belowFlatList}
                 />
 
@@ -212,6 +211,9 @@ const styles = StyleSheet.create({
     }, 
     headerText: {
         color: colors.white,
-    }
+    }, 
+    list: {
+        paddingTop: 20,
+    },
 });
   

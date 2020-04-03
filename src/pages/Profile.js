@@ -143,7 +143,6 @@ export default function Profile(props){
                         renderItem={({ item, index }) => (
                             renderInputList(item, index)
                         )}
-                        ListHeaderComponent={aboveFlatList}
                         ListFooterComponent={belowFlatList}
                     />
                 </KeyboardAvoidingView>
@@ -171,7 +170,10 @@ const styles = StyleSheet.create({
         }, 
         headerText: {
             color: colors.white,
-        }
+        },
+        list: {
+            paddingTop: 20,
+        },
     });
 
 

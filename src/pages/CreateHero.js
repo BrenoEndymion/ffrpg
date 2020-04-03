@@ -50,7 +50,7 @@ export default function CreateHero(pro) {
                 <Inventory tabLabel={{ label: "Inventário" }} label="Page #6" />
                 <Ability tabLabel={{ label: "Skills" }} label="Page #7" />
                 <Magics tabLabel={{ label: "Magias" }} label="Page #8" />
-                <Background tabLabel={{ label: "Background" }} label="Page #8" />
+                <Background tabLabel={{ label: "Background" }} label="Page #9" />
                 {/*}<PatientProfile tabLabel={{ label: "PERFIL" }} label="Page #3" />{*/}
             </ScrollableTabView>
         </Container >
