@@ -14,6 +14,7 @@ import Login from './Login';
 import Caracters from './Caracters';
 import Attributes from './Attributes';
 import Essences from './Essences';
+import Skill from './Skill';
 
 export default function CreateHero(pro) {
 
@@ -39,7 +40,7 @@ export default function CreateHero(pro) {
                 <Caracters tabLabel={{ label: "Características" }} label="Page #1" />
                 <Attributes tabLabel={{ label: "Atributos" }} label="Page #2" />
                 <Essences tabLabel={{ label: "Essências" }} label="Page #3" />
-                <Login tabLabel={{ label: "Perícias" }} label="Page #4" />
+                <Skill tabLabel={{ label: "Perícias" }} label="Page #4" />
                 <Login tabLabel={{ label: "Equipamentos" }} label="Page #5" />
                 <Login tabLabel={{ label: "Inventário" }} label="Page #6" />
                 <Login tabLabel={{ label: "Skills/Magias" }} label="Page #7" />
