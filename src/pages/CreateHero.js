@@ -12,7 +12,8 @@ import colors from '../config/colors';
 import fonts from '../config/fonts';
 import Login from './Login';
 import Caracters from './Caracters';
-import Attributes from './Attributes'
+import Attributes from './Attributes';
+import Essences from './Essences';
 
 export default function CreateHero(pro) {
 
@@ -37,7 +38,7 @@ export default function CreateHero(pro) {
                 renderTabBar={() => <TabBar tabStyles={{ tab: {} }} tabMargin={25} underlineHeight={3} tabBarStyle={{ backgroundColor: colors.blueDefault, marginTop: 0 }} tabBarTextStyle={{ fontSize: fonts.small }} underlineColor={colors.white} />}>
                 <Caracters tabLabel={{ label: "Características" }} label="Page #1" />
                 <Attributes tabLabel={{ label: "Atributos" }} label="Page #2" />
-                <Login tabLabel={{ label: "Essências" }} label="Page #3" />
+                <Essences tabLabel={{ label: "Essências" }} label="Page #3" />
                 <Login tabLabel={{ label: "Perícias" }} label="Page #4" />
                 <Login tabLabel={{ label: "Equipamentos" }} label="Page #5" />
                 <Login tabLabel={{ label: "Inventário" }} label="Page #6" />
