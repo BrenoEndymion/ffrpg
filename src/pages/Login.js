@@ -8,21 +8,23 @@ import {
   StatusBar,
   KeyboardAvoidingView,
   TouchableOpacity,
-  Button
+  Button,
+  Image,
 } from 'react-native';
 
-import { Image, ImageView, TextWelcome } from './styles/LoginStyles';
+import { ImageView, TextWelcome } from './styles/LoginStyles';
 import { TextInput, TextInputWhite } from '../components/TextInputs';
 import { BtnDefault } from "../components/Buttons";
 import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
 import { Actions } from 'react-native-router-flux';
+import colors from '../config/colors';
 
 export default function Login(props) {
     return (
         <>
         
         <KeyboardAvoidingView style={styles.background}>
-
+            <SafeAreaView></SafeAreaView>
             <View style={styles.logo}>
                 <Image
                 source={require('../assets/imgs/shield_and_swords.png')}
@@ -65,6 +67,7 @@ const styles = StyleSheet.create({
     background:{
         flex:1,
         justifyContent: 'center',
+        backgroundColor: colors.grayLight,
     },
     logo:{
         flex: 1,

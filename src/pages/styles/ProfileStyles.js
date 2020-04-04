@@ -26,3 +26,8 @@ export const SectionSubTitle = styled.Text`
     text-align: left;
     margin-top: 15px;
 `
+
+export const Container = styled.View`
+    flex:1;
+    background-color: ${colors.grayLight}
+`;

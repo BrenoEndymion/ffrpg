@@ -65,3 +65,8 @@ const shaddow = color => ({
 Shaddow.defaultProps = {
   ...shaddow(colors.blueLight),
 };
+
+export const Container = styled.View`
+    flex:1;
+    background-color: ${colors.grayLight}
+`;

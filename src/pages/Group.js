@@ -12,11 +12,10 @@ import {
   FlatList  
 } from 'react-native';
 
-import { Image, ImageView, TextWelcome } from './styles/LoginStyles';
 import { TextInput, TextInputWhite } from '../components/TextInputs';
-import {Scroll, ImageViewOp, Nv} from '../pages/styles/GroupStyles'
+import {Scroll, ImageView, ImageViewOp, Nv, Container} from '../pages/styles/GroupStyles'
 import { BtnDefault } from "../components/Buttons";
-import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin, Horizontal } from '../components/styles/general';
+import { AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin, Horizontal } from '../components/styles/general';
 import { Actions } from 'react-native-router-flux';
 import {Header} from "react-native-elements";
 import colors from '../config/colors';
@@ -26,7 +25,7 @@ export default function Login(props) {
     const [preview, setPreview] = useState(null);
     const [hasHero, setHasHero] = useState(true);
 
-    aboveFlatList = () => (
+    AboveFlatList = () => (
         <>
             <MarginTop />
 
@@ -42,37 +41,32 @@ export default function Login(props) {
 
 
     return (
-        <>
+        <Container style={{backgroundColor: colors.blueTitle}}>
         
-        <KeyboardAvoidingView style={styles.background}>
-        
-        {/*<Header
-              //leftComponent={<GoBack />}
-              statusBarProps={{ barStyle: 'light-content' }}
-              barStyle="light-content"
-              centerComponent={{ text: ( hasHero ? 'Campanha dos 4 cristais' : 'Crie seu Personagem'), style: styles.headerText }}
-              containerStyle={{
-                  backgroundColor: colors.blueDefault,
-                  justifyContent: 'space-around',
-                  
-              }}
-            /> */}
-                  
-        <Container>
-         <View style={styles.playerView}>
-             <Text style={styles.playerText}>Rebecca</Text>
-              <Horizontal>
-                <Text>HP: </Text>
-                <Text>HP: </Text>
-              </Horizontal>
-             
-         </View>
-
-        </Container>
+            <KeyboardAvoidingView style={styles.background}>
             
+            <Header
+                //leftComponent={<GoBack />}
+                statusBarProps={{ barStyle: 'light-content' }}
+                barStyle="light-content"
+                centerComponent={{ text: ( hasHero ? 'Campanha dos 4 cristais' : 'Crie seu Personagem'), style: styles.headerText }}
+                containerStyle={{
+                    backgroundColor: colors.blueDefault,
+                    justifyContent: 'space-around',
+                    
+                }}
+                /> 
+            <View style={styles.playerView}>
+                <Text style={styles.playerText}>Rebecca</Text>
+                <Horizontal>
+                    <Text style={styles.playerText}>HP: </Text>
+                    <Text style={styles.playerText}>HP: </Text>
+                </Horizontal>
+                
+            </View>  
 
-        </KeyboardAvoidingView>  
-        </>
+            </KeyboardAvoidingView>  
+        </Container>
     );
 }
 
@@ -86,9 +80,8 @@ const styles = StyleSheet.create({
     },
     
     playerView: {
-       marginTop: 30,
-       backgroundColor: colors.red,
-       marginLeft: 15,
+        backgroundColor: colors.brown,
+        marginLeft: 15,
     },  
 
     Element:{
@@ -97,11 +90,8 @@ const styles = StyleSheet.create({
 
     playerText: {
         fontSize: 16,
-        color: colors.blueActive,
+        color: colors.blueTitle,
         fontWeight: 'bold',
-    },
-    background: {
-        display: 'flex',
     },
 
    

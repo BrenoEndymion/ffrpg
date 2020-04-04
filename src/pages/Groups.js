@@ -4,7 +4,6 @@ import { withBadge, Avatar, Badge } from "react-native-elements";
 import colors from '../config/colors';
 
 import {
-  Container,
   Margin,
   SpaceBetween,
   Together,
@@ -18,6 +17,7 @@ import {
   Distance,
   ContainerItems,
   Shaddow,
+  Container,
 } from './styles/GroupsStyles';
 import { TextInputWhite } from '../components/TextInputs';
 

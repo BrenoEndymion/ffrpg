@@ -26,7 +26,7 @@ const Routes = () => (
           <Scene key="profile" component={Profile} hideNavBar={true} />
           <Scene key="createhero" component={CreateHero} hideNavBar={true} />          
           <Scene key="caracters" component={Caraters} hideNavBar={true}  />
-          <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} initial >
+          <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} initial  >
 
             <Scene
              key="home" 

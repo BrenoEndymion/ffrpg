@@ -10,10 +10,10 @@ import{
   KeyboardAvoidingView
 } from 'react-native';
 
-import {ImageView, Image ,BtnB  } from './styles/ProfileStyles';
+import {ImageView, Image ,BtnB , Container } from './styles/ProfileStyles';
 import colors from '../config/colors';
 import {Header, Icon} from "react-native-elements";
-import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
+import { AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
 import { TextInput } from '../components/TextInputs';
 import { BtnDefault } from "../components/Buttons";
 import fonts from '../config/fonts';
@@ -107,6 +107,7 @@ export default function Profile(props){
                 onChangeText={text => checkArray(item.id, text)}/> : 
                 <TextInput placeholder={item.field} 
                 secure={item.secure} 
+                style={styles.inputBack}
                 onChangeText={text => checkArray(item.id, text)} /> 
             }
 
@@ -165,7 +166,7 @@ const styles = StyleSheet.create({
             marginBottom: 7,
             padding: 15,
             borderRadius: metrics.baseRadius,
-            backgroundColor: colors.grayLight,
+            backgroundColor: colors.white,
             justifyContent: 'center',
         }, 
         headerText: {
@@ -173,6 +174,9 @@ const styles = StyleSheet.create({
         },
         list: {
             paddingTop: 20,
+        },
+        inputBack: {
+            backgroundColor: colors.white,
         },
     });
 

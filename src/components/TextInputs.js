@@ -30,6 +30,6 @@ export const TextInputWhite = ({ placeholder, secure, value, onChangeText }) => 
 
 const styles = StyleSheet.create({
     textInputStyle: {
-        color: colors.textColor,
+        backgroundColor: colors.white,
     }
 });
