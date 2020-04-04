@@ -15,6 +15,7 @@ import TabBar from "./components/TabBar"
 import Caraters from './pages/Caracters';
 import CreateHero from './pages/CreateHero';
 import Groups from './pages/Groups';
+import Group from './pages/Group'
 
 const Routes = () => (
     <Router>
@@ -25,7 +26,6 @@ const Routes = () => (
           <Scene key="profile" component={Profile} hideNavBar={true} />
           <Scene key="createhero" component={CreateHero} hideNavBar={true} />          
           <Scene key="caracters" component={Caraters} hideNavBar={true}  />
-
           <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} initial >
 
             <Scene
@@ -34,8 +34,8 @@ const Routes = () => (
              icon={({ tintColor }) => <Icon name="home" color={tintColor} />} hideNavBar={true} />
 
             <Scene
-              key="history"
-              component={Groups}
+              key="play"
+              component={Group}
               hideNavBar={true}
               icon={({ tintColor }) => <Icon name="play" color={tintColor} />}
             />
