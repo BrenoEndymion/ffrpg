@@ -7,7 +7,8 @@ const colors = {
   blueDefault: '#03a9f4',
   placeHolder: '#bdbdbd',
   grayWhite: '#6a7989',
-  blueActive: '#3D4490'
+  blueActive: '#3D4490',
+  blueTitle: '#22269E',
 };
 
 export default colors;

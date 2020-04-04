@@ -7,7 +7,8 @@ const iconMap = {
     home: require('../assets/images/tabBar/home.png'),
     profile: require('../assets/images/tabBar/profile.png'),
     history: require('../assets/images/tabBar/history.png'),
-    plus: require('../assets/images/tabBar/lustre.png')
+    plus: require('../assets/images/tabBar/lustre.png'),
+    play: require('../assets/images/tabBar/dados.png')
 };
 
 const Icon = ({ name, color, style, ...props }) => {

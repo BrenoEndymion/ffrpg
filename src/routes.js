@@ -14,7 +14,7 @@ import TabBar from "./components/TabBar"
 //screen of creation hero
 import Caraters from './pages/Caracters';
 import CreateHero from './pages/CreateHero';
-
+import Groups from './pages/Groups';
 
 const Routes = () => (
     <Router>
@@ -35,9 +35,9 @@ const Routes = () => (
 
             <Scene
               key="history"
-              component={Login}
+              component={Groups}
               hideNavBar={true}
-              icon={({ tintColor }) => <Icon name="history" color={tintColor} />}
+              icon={({ tintColor }) => <Icon name="play" color={tintColor} />}
             />
 
             <Scene
