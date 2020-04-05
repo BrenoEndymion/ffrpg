@@ -269,9 +269,7 @@ const styles = StyleSheet.create({
     },
 
     background: {
-        backgroundColor: colors.white,
-
-
+        backgroundColor: colors.grayLight,
     },
 
    

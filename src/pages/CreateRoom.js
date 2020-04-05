@@ -10,7 +10,7 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 
-import { ImageView, Image, BtnB, Container } from './styles/SignupStyles';
+import { ImageView, Image, BtnB, Container } from './styles/CreateRoomStyles';
 import {Header, Icon} from "react-native-elements";
 //import Icon from 'react-native-vector-icons/MaterialIcons'
 import colors from '../config/colors';
@@ -21,9 +21,9 @@ import fonts from '../config/fonts';
 import metrics from '../config/metrics';
 import RNPickerSelect from 'react-native-picker-select';
 import { Actions } from 'react-native-router-flux';
+import imagePicker from 'react-native-image-picker';
 
-
-export default function Signup(props) {
+export default function CreateRoom(props) {
 
     const [preview, setPreview] = useState(null);
     const [imageThumb, setImageThumb] = useState(null);
@@ -31,28 +31,13 @@ export default function Signup(props) {
     const fields = [
         {
             "id": 0,
-            "field": "Nome",
+            "field": "Nome da mesa",
             "secure": false
         },
         {
             "id": 1,
-            "field": "Email",
+            "field": "Sistema",
             "secure": false
-        },
-        {
-            "id": 2,
-            "field": "Tipo",
-            "secure": false
-        },
-        {
-            "id": 3,
-            "field": "Senha",
-            "secure": true
-        },
-        {
-            "id": 4,
-            "field": "Confirmar Senha",
-            "secure": true
         }]
 
     const GoBack = ({ }) => (
@@ -63,7 +48,7 @@ export default function Signup(props) {
         </Together>
     )
 
-    aboveFlatList = () => (
+    AboveFlatList = () => (
         <>
             <MarginTop />
 
@@ -88,24 +73,6 @@ export default function Signup(props) {
     )
 
     var arrayItems = ["", "", "", "", "", "", "", "", "", ""]
-
-    const Dropdown = () => {
-        return (
-            <RNPickerSelect
-                textInputProps={styles.pickerSelect}
-                placeholder={{
-                    label: 'Tipo',
-                    value: 'Tipo',
-                    color: '#000'
-                }}
-                onValueChange={(value) => arrayItems[4] = value}
-                items={[
-                    { label: 'Jogador', value: 'Jogador', key: '0' },
-                    { label: 'Mestre', value: 'Mestre', key: '1' },
-                ]}
-            />
-        );
-    };
 
     handleSelect = () => {
         imagePicker.showImagePicker({
@@ -149,9 +116,7 @@ export default function Signup(props) {
 
         <Margin>
             <KeyboardAvoidingView>
-                {index == 2 ? <Dropdown /> : index == 5 ? <DatePicker /> : 
-                    <TextInput placeholder={item.field} secure={item.secure} onChangeText={text => checkArray(item.id, text)} /> 
-                }
+                <TextInput placeholder={item.field} secure={item.secure} onChangeText={text => checkArray(item.id, text)} /> 
             </KeyboardAvoidingView>
         </Margin>
     )
@@ -171,7 +136,7 @@ export default function Signup(props) {
                     leftComponent={<GoBack />}
                     statusBarProps={{ barStyle: 'light-content' }}
                     barStyle="light-content"
-                    centerComponent={{ text: 'Crave sua jornada', style: styles.headerText }}
+                    centerComponent={{ text: 'Dê vida a sua mesa', style: styles.headerText }}
                     containerStyle={{
                         backgroundColor: colors.blueDefault,
                         justifyContent: 'space-around',
@@ -179,7 +144,7 @@ export default function Signup(props) {
                 />
 
                 {/* <SafeAreaView style={styles.safeAreaView}> */}
-
+                <AboveFlatList />
                 
                 <FlatList
                     style={styles.list}

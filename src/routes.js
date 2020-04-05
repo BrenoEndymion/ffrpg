@@ -16,6 +16,10 @@ import Caraters from './pages/Caracters';
 import CreateHero from './pages/CreateHero';
 import Groups from './pages/Groups';
 import Group from './pages/Group'
+import HomeMaster from './pages/HomeMaster'
+import CreateRoom from './pages/CreateRoom'
+import MasterPlayers from './pages/MasterPlayers'
+import HeroInfo from './pages/HeroInfo'
 
 const Routes = () => (
     <Router>
@@ -23,11 +27,13 @@ const Routes = () => (
           <Scene key="home" component={Home} hideNavBar={true} />         
           <Scene key="login" component={Login} hideNavBar={true} />
           <Scene key="signup" component={Signup} hideNavBar={true} />
+          <Scene key="createroom" component={CreateRoom} hideNavBar={true} />
           <Scene key="profile" component={Profile} hideNavBar={true} />
           <Scene key="createhero" component={CreateHero} hideNavBar={true} />          
           <Scene key="caracters" component={Caraters} hideNavBar={true}  />
-          <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} initial  >
+          <Scene key="heroinfo" component={HeroInfo} hideNavBar={true}  />
 
+          <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} >
             <Scene
              key="home" 
              component={Home} 
@@ -42,6 +48,30 @@ const Routes = () => (
 
             <Scene
               key="profile"
+              component={Profile}
+              hideNavBar={true}
+              icon={({ tintColor }) => <Icon name="profile" color={tintColor} />}
+
+            />
+
+          </Scene>
+
+          <Scene key="tabBarmaster" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} initial  >
+
+            <Scene
+             key="homemaster" 
+             component={HomeMaster} 
+             icon={({ tintColor }) => <Icon name="play" color={tintColor} />} hideNavBar={true} />
+
+            <Scene
+              key="mastersplayers"
+              component={MasterPlayers}
+              hideNavBar={true}
+              icon={({ tintColor }) => <Icon name="value" color={tintColor} />}
+            />
+
+            <Scene
+              key="profilemaster"
               component={Profile}
               hideNavBar={true}
               icon={({ tintColor }) => <Icon name="profile" color={tintColor} />}
