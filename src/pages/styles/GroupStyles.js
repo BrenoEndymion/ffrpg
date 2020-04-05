@@ -37,8 +37,8 @@ export const TextWelcome = styled.Text`
 `;
 export const ImageView = styled.View`
     background-color: ${colors.white}
-    height: 80px;
-    width: 80px;
+    height: 50;
+    width: 50px;
     border-radius: 40px;
     align-items: center;
     justify-content: center;
