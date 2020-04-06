@@ -21,7 +21,12 @@ import CreateRoom from './pages/CreateRoom'
 import MasterPlayers from './pages/MasterPlayers'
 import HeroInfo from './pages/HeroInfo'
 
+//redux
+import { Provider } from 'react-redux';
+import store from './store';
+
 const Routes = () => (
+  <Provider store={store}>
     <Router>
         <Stack key="root">
           <Scene key="home" component={Home} hideNavBar={true} />         
@@ -41,7 +46,7 @@ const Routes = () => (
 
             <Scene
               key="play"
-              component={Group}
+              component={Groups}
               hideNavBar={true}
               icon={({ tintColor }) => <Icon name="play" color={tintColor} />}
             />
@@ -56,7 +61,7 @@ const Routes = () => (
 
           </Scene>
 
-          <Scene key="tabBarmaster" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} initial  >
+          <Scene key="tabBarmaster" initial tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} >
 
             <Scene
              key="homemaster" 
@@ -80,7 +85,8 @@ const Routes = () => (
 
           </Scene>
       </Stack>
-  </Router> 
+    </Router> 
+  </Provider>
 );
 
 export default Routes;

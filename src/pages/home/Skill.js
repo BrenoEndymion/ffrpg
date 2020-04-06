@@ -39,7 +39,7 @@ export default function Caracters(props) {
                              <Text style={styles.fireElementText}>Fogo</Text>
                              <Horizontal>
                                 <Hoshi
-                                    label={'Intemidação'}
+                                    label={'Intimidação'}
                                     style={styles.inputStyle}
                                     // this is used as active border color
                                     borderColor={colors.blueDefault}
