@@ -18,4 +18,4 @@ function users(state = USER, action){
 
 const store = createStore(users); 
 
-export default store;
+export default store;   
