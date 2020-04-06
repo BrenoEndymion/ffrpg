@@ -31,7 +31,7 @@ import fonts from '../config/fonts';
 
 export default function HomeMaster(props) {
   
-    const [hasHero, setHasHero] = useState(true);
+    const [hasHero, setHasHero] = useState(false);
     const [visible, setVisible] = useState(false);
 
     const rooms = [

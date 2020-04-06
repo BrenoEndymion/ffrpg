@@ -38,7 +38,7 @@ const Routes = () => (
           <Scene key="caracters" component={Caraters} hideNavBar={true}  />
           <Scene key="heroinfo" component={HeroInfo} hideNavBar={true}  />
 
-          <Scene key="tabBar" initial tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} >
+          <Scene key="tabBar" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} >
             <Scene
              key="home" 
              component={Home} 
@@ -61,7 +61,7 @@ const Routes = () => (
 
           </Scene>
 
-          <Scene key="tabBarmaster" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} >
+          <Scene key="tabBarmaster" initial tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} >
 
             <Scene
              key="homemaster" 
