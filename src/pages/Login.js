@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   Button,
   Image,
+  Alert
 } from 'react-native';
 
 import { ImageView, TextWelcome } from './styles/LoginStyles';
@@ -18,11 +19,92 @@ import { BtnDefault } from "../components/Buttons";
 import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
 import { Actions } from 'react-native-router-flux';
 import colors from '../config/colors';
+import {useSelector, useDispatch} from 'react-redux';
+import ProgressLoader from 'rn-progress-loader';
+import md5 from 'md5';
+import api from '../services/api';
 
 export default function Login(props) {
+
+    const [email, setEmail] = useState('');
+    const [pass, setPass] = useState('');
+    const [visible, setVisible] = useState(false);
+    const teste = useSelector(state => state.data);
+    const dispatch = useDispatch()
+    async function Log() {
+        
+        if(!email || email == ''){
+            Alert.alert(
+                'Atenção',
+                'Preencha o email.',
+                [
+                    { text: 'OK', onPress: () => console.log('OK Pressed') },
+                ],
+                { cancelable: false },
+            );
+        }else if(!pass || pass == '' ) {
+            Alert.alert(
+                'Atenção',
+                'Preencha a senha.',
+                [
+                    { text: 'OK', onPress: () => console.log('OK Pressed') },
+                ],
+                { cancelable: false },
+            );
+        }else{
+            setVisible(true);
+            const data = new FormData();
+            
+            data.append('email', email);
+            data.append('pass', md5(pass));
+
+            const response = await api.post('/login', data);
+            if (response.status == 200 || response.status == "200") {
+                if(response.data.ok == 0){
+                    //setVisible(false);
+                    Alert.alert(
+                        'ERRO',
+                        'Email/senha incorretos.',
+                        [
+                            { text: 'OK', onPress: () => setVisible(false) },
+                        ],
+                        { cancelable: false },
+                    );
+                    
+                }else{
+                    //console.log(response.data.patient)
+                    dispatch({ type:'ADD_USER', user: response.data.user })
+                    setVisible(false);
+                    Actions.tabBar()
+                }
+            } else {
+                //
+                Alert.alert(
+                    'Erro',
+                    'Houve um erro no cadastro.',
+                    [
+                        {
+                            text: 'Cancel',
+                            onPress: () => console.log('Cancel Pressed'),
+                            style: 'cancel',
+                        },
+                        { text: 'OK', onPress: () => setVisible(false) },
+                    ],
+                    { cancelable: false },
+                );
+            }
+
+        }
+        
+    }
+
     return (
         <>
-        
+            <ProgressLoader
+                visible={visible}
+                isModal={true} isHUD={true}
+                hudColor={"#000000"}
+                color={"#FFFFFF"} />
         <KeyboardAvoidingView style={styles.background}>
             <SafeAreaView></SafeAreaView>
             <View style={styles.logo}>
@@ -36,20 +118,22 @@ export default function Login(props) {
                 <Margin>
                     
                     <TextInput
-                    style ={styles.inputStyle} 
-                    placeholder="Digite o seu e-mail"
-                    
+                        style ={styles.inputStyle} 
+                        placeholder="Digite o seu e-mail"
+                        onChangeText={text => setEmail(text)}
                     />
                     <TextInput 
-                    style ={styles.inputStyle} 
-                    placeholder="Digite a sua senha "
-                    secure={true}
+                        style ={styles.inputStyle} 
+                        placeholder="Digite a sua senha "
+                        secure={true}
+                        onChangeText={text => setPass(text)}
                     />
                 </Margin>
 
                 <BtnDefault                  
                     style={styles.enter}
-                    name="Entrar" />
+                    name="Entrar" 
+                    onPress={() => {Log()}} />
                 
                 <TouchableOpacity style={styles.btnsubmit} onPress={() => Actions.signup()}>
                     <Text style={styles.textStyle}>Crie a sua conta</Text>

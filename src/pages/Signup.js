@@ -8,6 +8,7 @@ import {
   StatusBar,
   FlatList,
   KeyboardAvoidingView,
+  Alert,
 } from 'react-native';
 
 import { ImageView, Image, BtnB, Container } from './styles/SignupStyles';
@@ -21,12 +22,15 @@ import fonts from '../config/fonts';
 import metrics from '../config/metrics';
 import RNPickerSelect from 'react-native-picker-select';
 import { Actions } from 'react-native-router-flux';
-
+import ProgressLoader from 'rn-progress-loader';
+import md5 from 'md5';
+import api from '../services/api';
 
 export default function Signup(props) {
 
     const [preview, setPreview] = useState(null);
     const [imageThumb, setImageThumb] = useState(null);
+    const [visible, setVisible] = useState(false);
 
     const fields = [
         {
@@ -81,7 +85,7 @@ export default function Signup(props) {
         <>
             <ShaddowGreen>
                 <BtnDefault name={"Cadastrar"} onPress={() => {
-                    cadPatient()
+                    cadUser()
                 }} />
             </ShaddowGreen>
         </>
@@ -98,7 +102,7 @@ export default function Signup(props) {
                     value: 'Tipo',
                     color: '#000'
                 }}
-                onValueChange={(value) => arrayItems[4] = value}
+                onValueChange={(value) => arrayItems[2] = value}
                 items={[
                     { label: 'Jogador', value: 'Jogador', key: '0' },
                     { label: 'Mestre', value: 'Mestre', key: '1' },
@@ -162,11 +166,66 @@ export default function Signup(props) {
         //console.log(arrayItems)
     }
 
+    async function cadUser () {
+        setVisible(true);
+
+        const data = new FormData();
+
+        data.append('name', arrayItems[0]);
+        data.append('email', arrayItems[1]);
+        data.append('type', arrayItems[2]);
+        data.append('pass', md5(arrayItems[3]));
+
+        console.log(data);
+
+        if (arrayItems[3] != arrayItems[4]) {
+            setVisible(false);
+            Alert.alert(
+                'Atenção',
+                'Senhas não coincidem',
+                [
+                    { text: 'OK', onPress: () => console.log('OK Pressed') },
+                ],
+                { cancelable: false },
+            );
+
+        } else {
+            const response = await api.post('/user', data);
+            if (response.status == 200 || response.status == "200") {
+                
+                Alert.alert(
+                    'Sucesso',
+                    'Cadastro efetuado.',
+                    [
+                        { text: 'OK', onPress: () => Actions.pop() },
+                    ],
+                    { cancelable: false },
+                );
+                setVisible(false)
+            } else {
+                
+                Alert.alert(
+                    'Erro',
+                    'Houve um erro no cadastro.',
+                    [
+                        { text: 'OK', onPress: () => setVisible(false) },
+                    ],
+                    { cancelable: false },
+                );
+            }
+        }
+
+    }
+
 
     return (
         <>
             <Container>
-
+                <ProgressLoader
+                    visible={visible}
+                    isModal={true} isHUD={true}
+                    hudColor={"#000000"}
+                    color={"#FFFFFF"} />
                 <Header
                     leftComponent={<GoBack />}
                     statusBarProps={{ barStyle: 'light-content' }}

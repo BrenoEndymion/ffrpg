@@ -53,7 +53,7 @@ const doctors = [
   },
 ];
 
-renderList = (item, region) => {
+renderListG = (item, region) => {
 
   return (
     //<Animated.View style={[styles.button, {transform: [{translateX}]}]}>
@@ -227,7 +227,7 @@ export default function ListSearch() {
           style={styles.list}
           data={doctors}
           keyExtractor={(item, index) => `${index}`}
-          renderItem={({ item }) => renderList(item, region)}
+          renderItem={({ item }) => renderListG(item, region)}
           ListEmptyComponent={() => <Text>Nehum registro</Text>}
         />
 

@@ -42,7 +42,7 @@ import Status from './home/Status';
 
 export default function Home(props) {
   
-    const [hasHero, setHasHero] = useState(true);
+    const [hasHero, setHasHero] = useState(false);
     const [visible, setVisible] = useState(false);
 
     return (
