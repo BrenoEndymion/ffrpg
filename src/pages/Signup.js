@@ -177,7 +177,18 @@ export default function Signup(props) {
         data.append('pass', md5(arrayItems[3]));
 
         console.log(data);
+        if (arrayItems[0] == "" || arrayItems[1] == "" || arrayItems[2] == "" || arrayItems[3] == "") {
+            setVisible(false);
+            Alert.alert(
+                'Atenção',
+                'Preencha todos os campos!',
+                [
+                    { text: 'OK', onPress: () => console.log('OK Pressed') },
+                ],
+                { cancelable: false },
+            );
 
+        } else
         if (arrayItems[3] != arrayItems[4]) {
             setVisible(false);
             Alert.alert(
@@ -192,16 +203,16 @@ export default function Signup(props) {
         } else {
             const response = await api.post('/user', data);
             if (response.status == 200 || response.status == "200") {
-                
+                setVisible(false)
                 Alert.alert(
                     'Sucesso',
                     'Cadastro efetuado.',
                     [
-                        { text: 'OK', onPress: () => Actions.pop() },
+                        { text: 'OK', onPress: () => Actions.login() },
                     ],
                     { cancelable: false },
                 );
-                setVisible(false)
+                
             } else {
                 
                 Alert.alert(

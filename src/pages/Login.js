@@ -75,7 +75,12 @@ export default function Login(props) {
                     //console.log(response.data.patient)
                     dispatch({ type:'ADD_USER', user: response.data.user })
                     setVisible(false);
-                    Actions.tabBar()
+                    if(response.data.user.type == "Jogador"){
+                        Actions.tabBar()
+                    }else{
+                        Actions.tabBarmaster()
+                    }
+                    //Actions.tabBar()
                 }
             } else {
                 //

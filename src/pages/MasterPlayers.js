@@ -54,7 +54,7 @@ const doctors = [
   },
 ];
 
-renderList = (item, region) => {
+renderListP = (item, region) => {
 
   return (
     //<Animated.View style={[styles.button, {transform: [{translateX}]}]}>
@@ -224,7 +224,7 @@ export default function MasterPlayers() {
           style={styles.list}
           data={doctors}
           keyExtractor={(item, index) => `${index}`}
-          renderItem={({ item }) => renderList(item, region)}
+          renderItem={({ item }) => renderListP(item, region)}
           ListEmptyComponent={() => <Text>Nehum registro</Text>}
         />
 

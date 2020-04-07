@@ -27,21 +27,54 @@ import { Actions } from 'react-native-router-flux';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TabBar from "react-native-underline-tabbar";
 import fonts from '../config/fonts';
+import api from '../services/api';
+import { useSelector } from 'react-redux';
 
 
 export default function HomeMaster(props) {
   
     const [hasHero, setHasHero] = useState(false);
-    const [visible, setVisible] = useState(false);
+    const [visible, setVisible] = useState(true);
+    const user = useSelector(state => state.data);
+    const [rooms, setRooms] = useState({});
 
-    const rooms = [
+    /*const rooms = [
         {
           id: 1,
           masterName: 'Retorno de julgran',
           specialty: 'FFRPG',
           rate: 4,
         },
-      ];
+      ];*/
+
+      useEffect(() => {
+
+        async function loadRooms() {
+          const data = new FormData();
+          data.append('master_id', user._id);
+
+          const response = await api.post('/masterroom', data);
+          if (response.status == 200 || response.status == "200") {
+            if(response.data.ok == 1){
+              setHasHero(true);
+              setVisible(false);
+              setRooms(response.data.rooms);
+            }
+          } else {
+            Alert.alert(
+              'Erro',
+              'Houve um erro ao buscar mesas.',
+              [
+                  { text: 'OK', onPress: () => setVisible(false) },
+              ],
+              { cancelable: false },
+           ); 
+          }
+          setVisible(false);
+        }
+        
+        loadRooms();
+    }, []);
 
       renderList = (item, region) => {
 
@@ -53,18 +86,18 @@ export default function HomeMaster(props) {
                 <Together>
                   <Avatar
                     rounded
-                    source={require('../assets/images/logoffrpg.png')}
+                    source={(item.url_image_room != "" ? {uri: `http://localhost:8080/files/${item.url_image_room}` } : require(`../assets/images/logoffrpg.png`))}
                     size="medium"
                   />
       
                   <Badge
-                    status="success"
+                    status={(item.online ? "success" : "warning" ) }
                     containerStyle={{ position: 'absolute', top: 2, right: 3 }}
                   />
                 </Together>
                 <SpaceBetween style={styles.spaceBetween}>
-                  <MasterName>{item.masterName}</MasterName>
-                  <Specialty>{item.specialty}</Specialty>
+                  <MasterName>{user.name}</MasterName>
+                  <Specialty>{item.name}</Specialty>
                 </SpaceBetween>
       
                 {/*}<Distance>{getDistanceFromLatLonInKm(

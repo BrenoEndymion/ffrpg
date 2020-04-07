@@ -8,6 +8,7 @@ import {
   StatusBar,
   FlatList,
   KeyboardAvoidingView,
+  Alert
 } from 'react-native';
 
 import { ImageView, Image, BtnB, Container } from './styles/CreateRoomStyles';
@@ -22,12 +23,18 @@ import metrics from '../config/metrics';
 import RNPickerSelect from 'react-native-picker-select';
 import { Actions } from 'react-native-router-flux';
 import imagePicker from 'react-native-image-picker';
+import ProgressLoader from 'rn-progress-loader';
+import { useSelector } from 'react-redux';
+import api from '../services/api';
+
 
 export default function CreateRoom(props) {
 
     const [preview, setPreview] = useState(null);
     const [imageThumb, setImageThumb] = useState(null);
-
+    const [visible, setVisible] = useState(false);
+    const user = useSelector(state => state.data);
+    const arrayItems = ["", "", "", "", "", "", "", "", "", ""]
     const fields = [
         {
             "id": 0,
@@ -66,13 +73,11 @@ export default function CreateRoom(props) {
         <>
             <ShaddowGreen>
                 <BtnDefault name={"Cadastrar"} onPress={() => {
-                    cadPatient()
+                    cadRoom()
                 }} />
             </ShaddowGreen>
         </>
     )
-
-    var arrayItems = ["", "", "", "", "", "", "", "", "", ""]
 
     handleSelect = () => {
         imagePicker.showImagePicker({
@@ -124,14 +129,65 @@ export default function CreateRoom(props) {
     function checkArray(id, text) {
         //console.log(id)
         arrayItems[id] = text
-        //console.log(arrayItems)
+        console.log(arrayItems)
+    }
+
+    async function cadRoom(){
+        setVisible(true);
+
+        const data = new FormData();
+
+        data.append('name', arrayItems[0]);
+        data.append('system', arrayItems[1]);
+        data.append('image', imageThumb);
+        data.append('master_id', user._id);
+        console.log(arrayItems)
+
+        if(arrayItems[0] == "" || arrayItems[1] == ""){
+            Alert.alert(
+                'Atenção!',
+                'Preencha todos os campos.',
+                [
+                    { text: 'OK', onPress: () => {setVisible(false) }},
+                ],
+                { cancelable: false },
+            );
+        }else{
+            const response = await api.post('/rooms', data);
+            if (response.status == 200 || response.status == "200") {
+                
+                Alert.alert(
+                    'Sucesso',
+                    'Cadastro efetuado.',
+                    [
+                        { text: 'OK', onPress: () => setVisible(false) },
+                    ],
+                    { cancelable: false },
+                );
+                Actions.pop()
+            } else {
+                
+                Alert.alert(
+                    'Erro',
+                    'Houve um erro no cadastro.',
+                    [
+                        { text: 'OK', onPress: () => setVisible(false) },
+                    ],
+                    { cancelable: false },
+                );
+            }
+        }
     }
 
 
     return (
         <>
             <Container>
-
+            <ProgressLoader
+                    visible={visible}
+                    isModal={true} isHUD={true}
+                    hudColor={"#000000"}
+                    color={"#FFFFFF"} />
                 <Header
                     leftComponent={<GoBack />}
                     statusBarProps={{ barStyle: 'light-content' }}
