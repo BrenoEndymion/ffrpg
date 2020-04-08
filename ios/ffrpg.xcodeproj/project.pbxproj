@@ -20,6 +20,66 @@
 		5BFE13A41F2A318AE6D35136 /* libPods-ffrpg-ffrpgTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C5AA679EA02BBF6390CC93 /* libPods-ffrpg-ffrpgTests.a */; };
 		62AAD0E4BEB5900C87FA71BF /* libPods-ffrpg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A8A19EA7F56A1CD80CC006 /* libPods-ffrpg.a */; };
 		8A0971FE062D09F65A3E6457 /* libPods-ffrpg-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F676E0C4B8EBA8760607E9 /* libPods-ffrpg-tvOS.a */; };
+		F7421E3B243D603500B8922C /* CeraPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E1D243D603300B8922C /* CeraPro-Light.otf */; };
+		F7421E3C243D603500B8922C /* CeraPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E1D243D603300B8922C /* CeraPro-Light.otf */; };
+		F7421E3D243D603500B8922C /* UniviaPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E1E243D603300B8922C /* UniviaPro-Black.otf */; };
+		F7421E3E243D603500B8922C /* UniviaPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E1E243D603300B8922C /* UniviaPro-Black.otf */; };
+		F7421E3F243D603500B8922C /* UniviaPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E1F243D603300B8922C /* UniviaPro-Medium.otf */; };
+		F7421E40243D603500B8922C /* UniviaPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E1F243D603300B8922C /* UniviaPro-Medium.otf */; };
+		F7421E41243D603500B8922C /* UniviaPro-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E20243D603300B8922C /* UniviaPro-ThinItalic.otf */; };
+		F7421E42243D603500B8922C /* UniviaPro-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E20243D603300B8922C /* UniviaPro-ThinItalic.otf */; };
+		F7421E43243D603500B8922C /* UniviaPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E21243D603300B8922C /* UniviaPro-Bold.otf */; };
+		F7421E44243D603500B8922C /* UniviaPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E21243D603300B8922C /* UniviaPro-Bold.otf */; };
+		F7421E45243D603500B8922C /* UniviaPro-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E22243D603300B8922C /* UniviaPro-BlackItalic.otf */; };
+		F7421E46243D603500B8922C /* UniviaPro-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E22243D603300B8922C /* UniviaPro-BlackItalic.otf */; };
+		F7421E47243D603500B8922C /* CeraPro-Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E23243D603300B8922C /* CeraPro-Medium Italic.otf */; };
+		F7421E48243D603500B8922C /* CeraPro-Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E23243D603300B8922C /* CeraPro-Medium Italic.otf */; };
+		F7421E49243D603500B8922C /* UniviaPro-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E24243D603300B8922C /* UniviaPro-BookItalic.otf */; };
+		F7421E4A243D603500B8922C /* UniviaPro-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E24243D603300B8922C /* UniviaPro-BookItalic.otf */; };
+		F7421E4B243D603500B8922C /* UniviaPro-UltraItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E25243D603300B8922C /* UniviaPro-UltraItalic.otf */; };
+		F7421E4C243D603500B8922C /* UniviaPro-UltraItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E25243D603300B8922C /* UniviaPro-UltraItalic.otf */; };
+		F7421E4D243D603500B8922C /* UniviaPro-UltraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E26243D603300B8922C /* UniviaPro-UltraLightItalic.otf */; };
+		F7421E4E243D603500B8922C /* UniviaPro-UltraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E26243D603300B8922C /* UniviaPro-UltraLightItalic.otf */; };
+		F7421E4F243D603500B8922C /* CeraPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E27243D603300B8922C /* CeraPro-Medium.otf */; };
+		F7421E50243D603500B8922C /* CeraPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E27243D603300B8922C /* CeraPro-Medium.otf */; };
+		F7421E51243D603500B8922C /* CeraPro-Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E28243D603300B8922C /* CeraPro-Bold Italic.otf */; };
+		F7421E52243D603500B8922C /* CeraPro-Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E28243D603300B8922C /* CeraPro-Bold Italic.otf */; };
+		F7421E53243D603500B8922C /* UniviaPro-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E29243D603300B8922C /* UniviaPro-UltraLight.otf */; };
+		F7421E54243D603500B8922C /* UniviaPro-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E29243D603300B8922C /* UniviaPro-UltraLight.otf */; };
+		F7421E55243D603500B8922C /* CeraPro-Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2A243D603300B8922C /* CeraPro-Light Italic.otf */; };
+		F7421E56243D603500B8922C /* CeraPro-Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2A243D603300B8922C /* CeraPro-Light Italic.otf */; };
+		F7421E57243D603500B8922C /* CeraPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2B243D603300B8922C /* CeraPro-Bold.otf */; };
+		F7421E58243D603500B8922C /* CeraPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2B243D603300B8922C /* CeraPro-Bold.otf */; };
+		F7421E59243D603500B8922C /* UniviaPro-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2C243D603400B8922C /* UniviaPro-MediumItalic.otf */; };
+		F7421E5A243D603500B8922C /* UniviaPro-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2C243D603400B8922C /* UniviaPro-MediumItalic.otf */; };
+		F7421E5B243D603500B8922C /* UniviaPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2D243D603400B8922C /* UniviaPro-Book.otf */; };
+		F7421E5C243D603500B8922C /* UniviaPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2D243D603400B8922C /* UniviaPro-Book.otf */; };
+		F7421E5D243D603500B8922C /* CeraPro-Thin Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2E243D603400B8922C /* CeraPro-Thin Italic.otf */; };
+		F7421E5E243D603500B8922C /* CeraPro-Thin Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2E243D603400B8922C /* CeraPro-Thin Italic.otf */; };
+		F7421E5F243D603500B8922C /* UniviaPro-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2F243D603400B8922C /* UniviaPro-Thin.otf */; };
+		F7421E60243D603500B8922C /* UniviaPro-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E2F243D603400B8922C /* UniviaPro-Thin.otf */; };
+		F7421E61243D603500B8922C /* CeraPro-Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E30243D603400B8922C /* CeraPro-Black Italic.otf */; };
+		F7421E62243D603500B8922C /* CeraPro-Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E30243D603400B8922C /* CeraPro-Black Italic.otf */; };
+		F7421E63243D603500B8922C /* UniviaPro-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E31243D603400B8922C /* UniviaPro-Ultra.otf */; };
+		F7421E64243D603500B8922C /* UniviaPro-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E31243D603400B8922C /* UniviaPro-Ultra.otf */; };
+		F7421E65243D603500B8922C /* CeraPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E32243D603400B8922C /* CeraPro-Regular.otf */; };
+		F7421E66243D603500B8922C /* CeraPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E32243D603400B8922C /* CeraPro-Regular.otf */; };
+		F7421E67243D603500B8922C /* UniviaPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E33243D603400B8922C /* UniviaPro-Regular.otf */; };
+		F7421E68243D603500B8922C /* UniviaPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E33243D603400B8922C /* UniviaPro-Regular.otf */; };
+		F7421E69243D603500B8922C /* UniviaPro-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E34243D603400B8922C /* UniviaPro-BoldItalic.otf */; };
+		F7421E6A243D603500B8922C /* UniviaPro-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E34243D603400B8922C /* UniviaPro-BoldItalic.otf */; };
+		F7421E6B243D603500B8922C /* CeraPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E35243D603500B8922C /* CeraPro-Black.otf */; };
+		F7421E6C243D603500B8922C /* CeraPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E35243D603500B8922C /* CeraPro-Black.otf */; };
+		F7421E6D243D603500B8922C /* UniviaPro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E36243D603500B8922C /* UniviaPro-Italic.otf */; };
+		F7421E6E243D603500B8922C /* UniviaPro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E36243D603500B8922C /* UniviaPro-Italic.otf */; };
+		F7421E6F243D603500B8922C /* UniviaPro-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E37243D603500B8922C /* UniviaPro-LightItalic.otf */; };
+		F7421E70243D603500B8922C /* UniviaPro-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E37243D603500B8922C /* UniviaPro-LightItalic.otf */; };
+		F7421E71243D603500B8922C /* CeraPro-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E38243D603500B8922C /* CeraPro-Thin.otf */; };
+		F7421E72243D603500B8922C /* CeraPro-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E38243D603500B8922C /* CeraPro-Thin.otf */; };
+		F7421E73243D603500B8922C /* UniviaPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E39243D603500B8922C /* UniviaPro-Light.otf */; };
+		F7421E74243D603500B8922C /* UniviaPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E39243D603500B8922C /* UniviaPro-Light.otf */; };
+		F7421E75243D603500B8922C /* CeraPro-Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E3A243D603500B8922C /* CeraPro-Regular Italic.otf */; };
+		F7421E76243D603500B8922C /* CeraPro-Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E3A243D603500B8922C /* CeraPro-Regular Italic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +127,36 @@
 		EA151FC19236479DF4FB28CF /* libPods-ffrpg-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ffrpg-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F7421E1D243D603300B8922C /* CeraPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Light.otf"; path = "../src/assets/fonts/CeraPro-Light.otf"; sourceTree = "<group>"; };
+		F7421E1E243D603300B8922C /* UniviaPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-Black.otf"; path = "../src/assets/fonts/UniviaPro-Black.otf"; sourceTree = "<group>"; };
+		F7421E1F243D603300B8922C /* UniviaPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-Medium.otf"; path = "../src/assets/fonts/UniviaPro-Medium.otf"; sourceTree = "<group>"; };
+		F7421E20243D603300B8922C /* UniviaPro-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-ThinItalic.otf"; path = "../src/assets/fonts/UniviaPro-ThinItalic.otf"; sourceTree = "<group>"; };
+		F7421E21243D603300B8922C /* UniviaPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-Bold.otf"; path = "../src/assets/fonts/UniviaPro-Bold.otf"; sourceTree = "<group>"; };
+		F7421E22243D603300B8922C /* UniviaPro-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-BlackItalic.otf"; path = "../src/assets/fonts/UniviaPro-BlackItalic.otf"; sourceTree = "<group>"; };
+		F7421E23243D603300B8922C /* CeraPro-Medium Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Medium Italic.otf"; path = "../src/assets/fonts/CeraPro-Medium Italic.otf"; sourceTree = "<group>"; };
+		F7421E24243D603300B8922C /* UniviaPro-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-BookItalic.otf"; path = "../src/assets/fonts/UniviaPro-BookItalic.otf"; sourceTree = "<group>"; };
+		F7421E25243D603300B8922C /* UniviaPro-UltraItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-UltraItalic.otf"; path = "../src/assets/fonts/UniviaPro-UltraItalic.otf"; sourceTree = "<group>"; };
+		F7421E26243D603300B8922C /* UniviaPro-UltraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-UltraLightItalic.otf"; path = "../src/assets/fonts/UniviaPro-UltraLightItalic.otf"; sourceTree = "<group>"; };
+		F7421E27243D603300B8922C /* CeraPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Medium.otf"; path = "../src/assets/fonts/CeraPro-Medium.otf"; sourceTree = "<group>"; };
+		F7421E28243D603300B8922C /* CeraPro-Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Bold Italic.otf"; path = "../src/assets/fonts/CeraPro-Bold Italic.otf"; sourceTree = "<group>"; };
+		F7421E29243D603300B8922C /* UniviaPro-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-UltraLight.otf"; path = "../src/assets/fonts/UniviaPro-UltraLight.otf"; sourceTree = "<group>"; };
+		F7421E2A243D603300B8922C /* CeraPro-Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Light Italic.otf"; path = "../src/assets/fonts/CeraPro-Light Italic.otf"; sourceTree = "<group>"; };
+		F7421E2B243D603300B8922C /* CeraPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Bold.otf"; path = "../src/assets/fonts/CeraPro-Bold.otf"; sourceTree = "<group>"; };
+		F7421E2C243D603400B8922C /* UniviaPro-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-MediumItalic.otf"; path = "../src/assets/fonts/UniviaPro-MediumItalic.otf"; sourceTree = "<group>"; };
+		F7421E2D243D603400B8922C /* UniviaPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-Book.otf"; path = "../src/assets/fonts/UniviaPro-Book.otf"; sourceTree = "<group>"; };
+		F7421E2E243D603400B8922C /* CeraPro-Thin Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Thin Italic.otf"; path = "../src/assets/fonts/CeraPro-Thin Italic.otf"; sourceTree = "<group>"; };
+		F7421E2F243D603400B8922C /* UniviaPro-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-Thin.otf"; path = "../src/assets/fonts/UniviaPro-Thin.otf"; sourceTree = "<group>"; };
+		F7421E30243D603400B8922C /* CeraPro-Black Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Black Italic.otf"; path = "../src/assets/fonts/CeraPro-Black Italic.otf"; sourceTree = "<group>"; };
+		F7421E31243D603400B8922C /* UniviaPro-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-Ultra.otf"; path = "../src/assets/fonts/UniviaPro-Ultra.otf"; sourceTree = "<group>"; };
+		F7421E32243D603400B8922C /* CeraPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Regular.otf"; path = "../src/assets/fonts/CeraPro-Regular.otf"; sourceTree = "<group>"; };
+		F7421E33243D603400B8922C /* UniviaPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-Regular.otf"; path = "../src/assets/fonts/UniviaPro-Regular.otf"; sourceTree = "<group>"; };
+		F7421E34243D603400B8922C /* UniviaPro-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-BoldItalic.otf"; path = "../src/assets/fonts/UniviaPro-BoldItalic.otf"; sourceTree = "<group>"; };
+		F7421E35243D603500B8922C /* CeraPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Black.otf"; path = "../src/assets/fonts/CeraPro-Black.otf"; sourceTree = "<group>"; };
+		F7421E36243D603500B8922C /* UniviaPro-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-Italic.otf"; path = "../src/assets/fonts/UniviaPro-Italic.otf"; sourceTree = "<group>"; };
+		F7421E37243D603500B8922C /* UniviaPro-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-LightItalic.otf"; path = "../src/assets/fonts/UniviaPro-LightItalic.otf"; sourceTree = "<group>"; };
+		F7421E38243D603500B8922C /* CeraPro-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Thin.otf"; path = "../src/assets/fonts/CeraPro-Thin.otf"; sourceTree = "<group>"; };
+		F7421E39243D603500B8922C /* UniviaPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UniviaPro-Light.otf"; path = "../src/assets/fonts/UniviaPro-Light.otf"; sourceTree = "<group>"; };
+		F7421E3A243D603500B8922C /* CeraPro-Regular Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Regular Italic.otf"; path = "../src/assets/fonts/CeraPro-Regular Italic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +215,7 @@
 		13B07FAE1A68108700A75B9A /* ffrpg */ = {
 			isa = PBXGroup;
 			children = (
+				F7421E1C243D5FD000B8922C /* fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -149,6 +240,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4396786A25A64A3AABC4C63D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		77273AA24F398F38BA249995 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +259,6 @@
 				83E7E2987B1BD9079F8ED07C /* Pods-ffrpg-tvOSTests.debug.xcconfig */,
 				D82A1BF594631BB949986C89 /* Pods-ffrpg-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -199,13 +296,42 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4396786A25A64A3AABC4C63D /* Resources */ = {
-			isa = "PBXGroup";
+		F7421E1C243D5FD000B8922C /* fonts */ = {
+			isa = PBXGroup;
 			children = (
+				F7421E30243D603400B8922C /* CeraPro-Black Italic.otf */,
+				F7421E35243D603500B8922C /* CeraPro-Black.otf */,
+				F7421E28243D603300B8922C /* CeraPro-Bold Italic.otf */,
+				F7421E2B243D603300B8922C /* CeraPro-Bold.otf */,
+				F7421E2A243D603300B8922C /* CeraPro-Light Italic.otf */,
+				F7421E1D243D603300B8922C /* CeraPro-Light.otf */,
+				F7421E23243D603300B8922C /* CeraPro-Medium Italic.otf */,
+				F7421E27243D603300B8922C /* CeraPro-Medium.otf */,
+				F7421E3A243D603500B8922C /* CeraPro-Regular Italic.otf */,
+				F7421E32243D603400B8922C /* CeraPro-Regular.otf */,
+				F7421E2E243D603400B8922C /* CeraPro-Thin Italic.otf */,
+				F7421E38243D603500B8922C /* CeraPro-Thin.otf */,
+				F7421E1E243D603300B8922C /* UniviaPro-Black.otf */,
+				F7421E22243D603300B8922C /* UniviaPro-BlackItalic.otf */,
+				F7421E21243D603300B8922C /* UniviaPro-Bold.otf */,
+				F7421E34243D603400B8922C /* UniviaPro-BoldItalic.otf */,
+				F7421E2D243D603400B8922C /* UniviaPro-Book.otf */,
+				F7421E24243D603300B8922C /* UniviaPro-BookItalic.otf */,
+				F7421E36243D603500B8922C /* UniviaPro-Italic.otf */,
+				F7421E39243D603500B8922C /* UniviaPro-Light.otf */,
+				F7421E37243D603500B8922C /* UniviaPro-LightItalic.otf */,
+				F7421E1F243D603300B8922C /* UniviaPro-Medium.otf */,
+				F7421E2C243D603400B8922C /* UniviaPro-MediumItalic.otf */,
+				F7421E33243D603400B8922C /* UniviaPro-Regular.otf */,
+				F7421E2F243D603400B8922C /* UniviaPro-Thin.otf */,
+				F7421E20243D603300B8922C /* UniviaPro-ThinItalic.otf */,
+				F7421E31243D603400B8922C /* UniviaPro-Ultra.otf */,
+				F7421E25243D603300B8922C /* UniviaPro-UltraItalic.otf */,
+				F7421E29243D603300B8922C /* UniviaPro-UltraLight.otf */,
+				F7421E26243D603300B8922C /* UniviaPro-UltraLightItalic.otf */,
 			);
-			name = Resources;
+			name = fonts;
 			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -342,6 +468,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7421E74243D603500B8922C /* UniviaPro-Light.otf in Resources */,
+				F7421E6A243D603500B8922C /* UniviaPro-BoldItalic.otf in Resources */,
+				F7421E44243D603500B8922C /* UniviaPro-Bold.otf in Resources */,
+				F7421E40243D603500B8922C /* UniviaPro-Medium.otf in Resources */,
+				F7421E64243D603500B8922C /* UniviaPro-Ultra.otf in Resources */,
+				F7421E5A243D603500B8922C /* UniviaPro-MediumItalic.otf in Resources */,
+				F7421E52243D603500B8922C /* CeraPro-Bold Italic.otf in Resources */,
+				F7421E68243D603500B8922C /* UniviaPro-Regular.otf in Resources */,
+				F7421E5C243D603500B8922C /* UniviaPro-Book.otf in Resources */,
+				F7421E4C243D603500B8922C /* UniviaPro-UltraItalic.otf in Resources */,
+				F7421E4A243D603500B8922C /* UniviaPro-BookItalic.otf in Resources */,
+				F7421E60243D603500B8922C /* UniviaPro-Thin.otf in Resources */,
+				F7421E70243D603500B8922C /* UniviaPro-LightItalic.otf in Resources */,
+				F7421E6C243D603500B8922C /* CeraPro-Black.otf in Resources */,
+				F7421E3C243D603500B8922C /* CeraPro-Light.otf in Resources */,
+				F7421E5E243D603500B8922C /* CeraPro-Thin Italic.otf in Resources */,
+				F7421E72243D603500B8922C /* CeraPro-Thin.otf in Resources */,
+				F7421E56243D603500B8922C /* CeraPro-Light Italic.otf in Resources */,
+				F7421E62243D603500B8922C /* CeraPro-Black Italic.otf in Resources */,
+				F7421E46243D603500B8922C /* UniviaPro-BlackItalic.otf in Resources */,
+				F7421E48243D603500B8922C /* CeraPro-Medium Italic.otf in Resources */,
+				F7421E58243D603500B8922C /* CeraPro-Bold.otf in Resources */,
+				F7421E6E243D603500B8922C /* UniviaPro-Italic.otf in Resources */,
+				F7421E4E243D603500B8922C /* UniviaPro-UltraLightItalic.otf in Resources */,
+				F7421E76243D603500B8922C /* CeraPro-Regular Italic.otf in Resources */,
+				F7421E50243D603500B8922C /* CeraPro-Medium.otf in Resources */,
+				F7421E54243D603500B8922C /* UniviaPro-UltraLight.otf in Resources */,
+				F7421E42243D603500B8922C /* UniviaPro-ThinItalic.otf in Resources */,
+				F7421E3E243D603500B8922C /* UniviaPro-Black.otf in Resources */,
+				F7421E66243D603500B8922C /* CeraPro-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,8 +505,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7421E4F243D603500B8922C /* CeraPro-Medium.otf in Resources */,
+				F7421E41243D603500B8922C /* UniviaPro-ThinItalic.otf in Resources */,
+				F7421E47243D603500B8922C /* CeraPro-Medium Italic.otf in Resources */,
+				F7421E6D243D603500B8922C /* UniviaPro-Italic.otf in Resources */,
+				F7421E67243D603500B8922C /* UniviaPro-Regular.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				F7421E59243D603500B8922C /* UniviaPro-MediumItalic.otf in Resources */,
+				F7421E3D243D603500B8922C /* UniviaPro-Black.otf in Resources */,
+				F7421E43243D603500B8922C /* UniviaPro-Bold.otf in Resources */,
+				F7421E55243D603500B8922C /* CeraPro-Light Italic.otf in Resources */,
+				F7421E53243D603500B8922C /* UniviaPro-UltraLight.otf in Resources */,
+				F7421E51243D603500B8922C /* CeraPro-Bold Italic.otf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				F7421E4B243D603500B8922C /* UniviaPro-UltraItalic.otf in Resources */,
+				F7421E5D243D603500B8922C /* CeraPro-Thin Italic.otf in Resources */,
+				F7421E65243D603500B8922C /* CeraPro-Regular.otf in Resources */,
+				F7421E5B243D603500B8922C /* UniviaPro-Book.otf in Resources */,
+				F7421E49243D603500B8922C /* UniviaPro-BookItalic.otf in Resources */,
+				F7421E75243D603500B8922C /* CeraPro-Regular Italic.otf in Resources */,
+				F7421E63243D603500B8922C /* UniviaPro-Ultra.otf in Resources */,
+				F7421E69243D603500B8922C /* UniviaPro-BoldItalic.otf in Resources */,
+				F7421E61243D603500B8922C /* CeraPro-Black Italic.otf in Resources */,
+				F7421E5F243D603500B8922C /* UniviaPro-Thin.otf in Resources */,
+				F7421E57243D603500B8922C /* CeraPro-Bold.otf in Resources */,
+				F7421E45243D603500B8922C /* UniviaPro-BlackItalic.otf in Resources */,
+				F7421E4D243D603500B8922C /* UniviaPro-UltraLightItalic.otf in Resources */,
+				F7421E71243D603500B8922C /* CeraPro-Thin.otf in Resources */,
+				F7421E3F243D603500B8922C /* UniviaPro-Medium.otf in Resources */,
+				F7421E73243D603500B8922C /* UniviaPro-Light.otf in Resources */,
+				F7421E6B243D603500B8922C /* CeraPro-Black.otf in Resources */,
+				F7421E3B243D603500B8922C /* CeraPro-Light.otf in Resources */,
+				F7421E6F243D603500B8922C /* UniviaPro-LightItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
