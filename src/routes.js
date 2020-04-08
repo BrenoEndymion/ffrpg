@@ -30,7 +30,7 @@ const Routes = () => (
     <Router>
         <Stack key="root">
           <Scene key="home" component={Home} hideNavBar={true} />         
-          <Scene key="login" component={Login} hideNavBar={true} />
+          <Scene key="login" initial component={Login} hideNavBar={true} />
           <Scene key="signup" component={Signup} hideNavBar={true} />
           <Scene key="createroom" component={CreateRoom} hideNavBar={true} />
           <Scene key="profile" component={Profile} hideNavBar={true} />
@@ -61,7 +61,7 @@ const Routes = () => (
 
           </Scene>
 
-          <Scene key="tabBarmaster" initial tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} >
+          <Scene key="tabBarmaster" tabBarComponent={TabBar} tabs={true} activeTintColor={colors.white} tabBarPosition={"bottom"} hideNavBar={true} >
 
             <Scene
              key="homemaster" 
