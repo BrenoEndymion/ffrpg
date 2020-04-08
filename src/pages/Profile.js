@@ -50,7 +50,13 @@ export default function Profile(props){
         }
     ]
 
-    
+    useEffect(() => {
+
+        async function loadUser() {
+            console.log('deu foi certo')
+        }
+        loadUser();
+    }, []);
 
     aboveFlatList = () =>(
         <>
@@ -103,9 +109,12 @@ export default function Profile(props){
 
         <Margin>
 
-            {index == 3 ? <Dropdown /> : index == 1 ? <TextInput editable={false} placeholder={item.field}             secure={item.secure} 
-                onChangeText={text => checkArray(item.id, text)}/> : 
-                <TextInput placeholder={item.field} 
+            {index == 3 ? 
+            <TextInput editable={false} placeholder={item.field}  value="" secure={item.secure} 
+                onChangeText={text => checkArray(item.id, text)}/> 
+                : index == 1 ? <TextInput editable={false} placeholder={item.field}  value="" secure={item.secure} 
+                onChangeText={text => checkArray(item.id, text)}/> 
+                : <TextInput placeholder={item.field} 
                 secure={item.secure} 
                 style={styles.inputBack}
                 onChangeText={text => checkArray(item.id, text)} /> 
