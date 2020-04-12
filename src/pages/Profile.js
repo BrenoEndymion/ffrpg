@@ -34,7 +34,6 @@ export default function Profile(props){
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
     const [tipo, setTipo] = useState();
-    const [dataUser, setDataUser] = useState({});
     const [visible, setVisible] = useState(true);
 
     
@@ -84,7 +83,7 @@ export default function Profile(props){
               } else {
                 Alert.alert(
                   'Erro',
-                  'Houve um erro ao buscar p usuário.',
+                  'Houve um erro ao buscar o usuário.',
                   [
                       { text: 'OK', onPress: () => setVisible(false) },
                   ],
@@ -104,9 +103,48 @@ export default function Profile(props){
 
     async function updateUser(){
 
-    }
+        const data = new FormData();
+        data.append('_id', user._id)
+        data.append('name', nome);         
+        
+        if(!senha == "Deixe em branco se não quiser alterar a senha"){
+            data.append('pass', senha); 
+        }
+        
+        const response = await api.put(`user/${user._id}`, data);
+        if (response.status == 200 || response.status == "200") {             
+              if(response.data.ok == 1){
 
-    
+                dispatch({ type:'ADD_USER', user: response.data.user });
+                Alert.alert(
+                    'Deu foi certo',
+                    'Usuário alterado com sucesso.',
+                    [
+                        { text: 'OK', onPress: () => setVisible(false) },
+                    ],
+                    { cancelable: false },
+                 ); 
+
+
+              }            
+          } else {
+            Alert.alert(
+              'ihhhh!! ',
+              'Houve um erro ao alterar o usuário.',
+              [
+                  { text: 'OK', onPress: () => setVisible(false) },
+              ],
+              { cancelable: false },
+           ); 
+          }
+          setVisible(false);             
+          
+          
+        } 
+
+        function logOut(){
+
+        }
     
 
     aboveFlatList = () =>(
@@ -127,13 +165,13 @@ export default function Profile(props){
         <>
             <ShaddowGreen>
                 <BtnDefault name={"Salvar"} onPress={() => {
-                    cadPatient()
+                    updateUser()
                 }} />
             </ShaddowGreen>
 
             <ShaddowGreen>
                 <BtnDefault name={"Sair"} onPress={() => {
-                    cadPatient()
+                    logOut()
                 }} />
             </ShaddowGreen>
         </>
@@ -162,17 +200,17 @@ export default function Profile(props){
 
             {index == 3 ? 
             <TextInput editable={false} placeholder={tipo}  value="" secure={item.secure} 
-                onChangeText={text => checkArray(item.id, text)}/> 
+                onChangeText={text => checkArray(item.id, setTipo(text))}/> 
                 : index == 2 ?<TextInput editable={false} placeholder={'Deixe em branco se não quiser alterar a senha'}  value="" secure={item.secure = true} 
-                onChangeText={text => checkArray(item.id, text)}/>
+                onChangeText={text => checkArray(item.id, setSenha(text))}/>
 
                 : index == 1 ? <TextInput editable={false} placeholder={email}  value="" secure={item.secure} 
-                onChangeText={text => checkArray(item.id, text)}/> 
+                onChangeText={text => checkArray(item.id, setEmail(text))}/> 
                 
                 : <TextInput placeholder={nome} 
                 secure={item.secure} 
                 style={styles.inputBack}
-                onChangeText={text => checkArray(item.id, text)} /> 
+                onChangeText={text => checkArray(item.id, setNome(text))} /> 
             }
 
         </Margin>
