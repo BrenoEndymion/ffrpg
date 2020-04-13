@@ -88,7 +88,7 @@ renderListG = (item, region) => {
   );
 };
 
-export default function ListSearch() {
+  export default function ListSearch() {
   const [data, setData] = useState([]);
   const [dataAux, setDataAux] = useState([]);
   const [value, setValue] = useState('');
@@ -230,7 +230,6 @@ export default function ListSearch() {
           renderItem={({ item }) => renderListG(item, region)}
           ListEmptyComponent={() => <Text>Nehum registro</Text>}
         />
-
       </ContainerItems>
     </Container>
   );
