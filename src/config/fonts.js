@@ -16,6 +16,7 @@ const fonts = {
   regular: 'CeraPro-Regular',
   medium: 'CeraPro-Medium',
   bold: 'CeraPro-Bold',
+  black: 'CeraPro-Black'
   // light: 'UniviaPro-Light',
   // regular: 'UniviaPro-Regular',
   // medium: 'UniviaPro-Medium',

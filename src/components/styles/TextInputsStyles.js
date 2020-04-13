@@ -11,6 +11,7 @@ export const Input = styled.TextInput`
     border-radius: ${metrics.baseRadius}px;
     background-color: ${colors.grayLight};
     justify-content: center;
+    font-family: ${fonts.light}
 `;
 
 export const InputWhite = styled.TextInput`
