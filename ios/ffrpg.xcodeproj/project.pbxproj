@@ -20,6 +20,8 @@
 		5BFE13A41F2A318AE6D35136 /* libPods-ffrpg-ffrpgTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C5AA679EA02BBF6390CC93 /* libPods-ffrpg-ffrpgTests.a */; };
 		62AAD0E4BEB5900C87FA71BF /* libPods-ffrpg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A8A19EA7F56A1CD80CC006 /* libPods-ffrpg.a */; };
 		8A0971FE062D09F65A3E6457 /* libPods-ffrpg-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F676E0C4B8EBA8760607E9 /* libPods-ffrpg-tvOS.a */; };
+		F73DB76524450E6B001231AF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB61A68108700A75B9A /* Info.plist */; };
+		F73DB76624450E6B001231AF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB61A68108700A75B9A /* Info.plist */; };
 		F7421E3B243D603500B8922C /* CeraPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E1D243D603300B8922C /* CeraPro-Light.otf */; };
 		F7421E3C243D603500B8922C /* CeraPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E1D243D603300B8922C /* CeraPro-Light.otf */; };
 		F7421E3D243D603500B8922C /* UniviaPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7421E1E243D603300B8922C /* UniviaPro-Black.otf */; };
@@ -299,6 +301,22 @@
 		F7421E1C243D5FD000B8922C /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F73DB74024450C88001231AF /* AntDesign.ttf */,
+				F73DB74224450C88001231AF /* Entypo.ttf */,
+				F73DB74324450C88001231AF /* EvilIcons.ttf */,
+				F73DB73824450C88001231AF /* Feather.ttf */,
+				F73DB73624450C87001231AF /* FontAwesome.ttf */,
+				F73DB74424450C88001231AF /* FontAwesome5_Brands.ttf */,
+				F73DB73C24450C88001231AF /* FontAwesome5_Regular.ttf */,
+				F73DB74124450C88001231AF /* FontAwesome5_Solid.ttf */,
+				F73DB73F24450C88001231AF /* Fontisto.ttf */,
+				F73DB73D24450C88001231AF /* Foundation.ttf */,
+				F73DB73A24450C88001231AF /* Ionicons.ttf */,
+				F73DB73B24450C88001231AF /* MaterialCommunityIcons.ttf */,
+				F73DB73524450C87001231AF /* MaterialIcons.ttf */,
+				F73DB73924450C88001231AF /* Octicons.ttf */,
+				F73DB73724450C88001231AF /* SimpleLineIcons.ttf */,
+				F73DB73E24450C88001231AF /* Zocial.ttf */,
 				F7421E30243D603400B8922C /* CeraPro-Black Italic.otf */,
 				F7421E35243D603500B8922C /* CeraPro-Black.otf */,
 				F7421E28243D603300B8922C /* CeraPro-Bold Italic.otf */,
@@ -469,15 +487,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7421E74243D603500B8922C /* UniviaPro-Light.otf in Resources */,
+				F73DB76024450C88001231AF /* Entypo.ttf in Resources */,
 				F7421E6A243D603500B8922C /* UniviaPro-BoldItalic.otf in Resources */,
+				F73DB75024450C88001231AF /* Ionicons.ttf in Resources */,
 				F7421E44243D603500B8922C /* UniviaPro-Bold.otf in Resources */,
 				F7421E40243D603500B8922C /* UniviaPro-Medium.otf in Resources */,
 				F7421E64243D603500B8922C /* UniviaPro-Ultra.otf in Resources */,
 				F7421E5A243D603500B8922C /* UniviaPro-MediumItalic.otf in Resources */,
 				F7421E52243D603500B8922C /* CeraPro-Bold Italic.otf in Resources */,
 				F7421E68243D603500B8922C /* UniviaPro-Regular.otf in Resources */,
+				F73DB76624450E6B001231AF /* Info.plist in Resources */,
+				F73DB75624450C88001231AF /* Foundation.ttf in Resources */,
 				F7421E5C243D603500B8922C /* UniviaPro-Book.otf in Resources */,
+				F73DB75E24450C88001231AF /* FontAwesome5_Solid.ttf in Resources */,
+				F73DB75424450C88001231AF /* FontAwesome5_Regular.ttf in Resources */,
 				F7421E4C243D603500B8922C /* UniviaPro-UltraItalic.otf in Resources */,
+				F73DB74E24450C88001231AF /* Octicons.ttf in Resources */,
+				F73DB74C24450C88001231AF /* Feather.ttf in Resources */,
+				F73DB76424450C88001231AF /* FontAwesome5_Brands.ttf in Resources */,
 				F7421E4A243D603500B8922C /* UniviaPro-BookItalic.otf in Resources */,
 				F7421E60243D603500B8922C /* UniviaPro-Thin.otf in Resources */,
 				F7421E70243D603500B8922C /* UniviaPro-LightItalic.otf in Resources */,
@@ -486,17 +513,25 @@
 				F7421E5E243D603500B8922C /* CeraPro-Thin Italic.otf in Resources */,
 				F7421E72243D603500B8922C /* CeraPro-Thin.otf in Resources */,
 				F7421E56243D603500B8922C /* CeraPro-Light Italic.otf in Resources */,
+				F73DB75A24450C88001231AF /* Fontisto.ttf in Resources */,
 				F7421E62243D603500B8922C /* CeraPro-Black Italic.otf in Resources */,
+				F73DB74824450C88001231AF /* FontAwesome.ttf in Resources */,
 				F7421E46243D603500B8922C /* UniviaPro-BlackItalic.otf in Resources */,
 				F7421E48243D603500B8922C /* CeraPro-Medium Italic.otf in Resources */,
 				F7421E58243D603500B8922C /* CeraPro-Bold.otf in Resources */,
+				F73DB75224450C88001231AF /* MaterialCommunityIcons.ttf in Resources */,
+				F73DB75C24450C88001231AF /* AntDesign.ttf in Resources */,
 				F7421E6E243D603500B8922C /* UniviaPro-Italic.otf in Resources */,
 				F7421E4E243D603500B8922C /* UniviaPro-UltraLightItalic.otf in Resources */,
 				F7421E76243D603500B8922C /* CeraPro-Regular Italic.otf in Resources */,
+				F73DB75824450C88001231AF /* Zocial.ttf in Resources */,
+				F73DB74A24450C88001231AF /* SimpleLineIcons.ttf in Resources */,
+				F73DB74624450C88001231AF /* MaterialIcons.ttf in Resources */,
 				F7421E50243D603500B8922C /* CeraPro-Medium.otf in Resources */,
 				F7421E54243D603500B8922C /* UniviaPro-UltraLight.otf in Resources */,
 				F7421E42243D603500B8922C /* UniviaPro-ThinItalic.otf in Resources */,
 				F7421E3E243D603500B8922C /* UniviaPro-Black.otf in Resources */,
+				F73DB76224450C88001231AF /* EvilIcons.ttf in Resources */,
 				F7421E66243D603500B8922C /* CeraPro-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +568,7 @@
 				F7421E4D243D603500B8922C /* UniviaPro-UltraLightItalic.otf in Resources */,
 				F7421E71243D603500B8922C /* CeraPro-Thin.otf in Resources */,
 				F7421E3F243D603500B8922C /* UniviaPro-Medium.otf in Resources */,
+				F73DB76524450E6B001231AF /* Info.plist in Resources */,
 				F7421E73243D603500B8922C /* UniviaPro-Light.otf in Resources */,
 				F7421E6B243D603500B8922C /* CeraPro-Black.otf in Resources */,
 				F7421E3B243D603500B8922C /* CeraPro-Light.otf in Resources */,
