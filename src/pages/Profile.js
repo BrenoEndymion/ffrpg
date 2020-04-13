@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState, useEffect} from 'react';
 import{
   SafeAreaView,
@@ -20,11 +21,21 @@ import fonts from '../config/fonts';
 import metrics from '../config/metrics';
 import RNPickerSelect from 'react-native-picker-select';
 import { Actions } from 'react-native-router-flux';
-
+import {useSelector, useDispatch} from 'react-redux';
+import userData from '../store/index';
+import api from '../services/api';
 
 export default function Profile(props){
 
     const [preview, setPreview] = useState(null);
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.data);
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState();
+    const [senha, setSenha] = useState();
+    const [tipo, setTipo] = useState();
+    const [visible, setVisible] = useState(true);
+
     
     const fields = [
         {
@@ -50,13 +61,91 @@ export default function Profile(props){
         }
     ]
 
+    
+    ///Vai ser executado antes do carregamento da tela
     useEffect(() => {
+        async function loadUser() {      
+            const data = new FormData();
+            //atribuindo o id no objeto
+            data.append('user_id', user._id);            
 
-        async function loadUser() {
-            console.log('deu foi certo')
-        }
+
+            //chamando dados do banco de dados
+            const response = await api.get(`user/${user._id}`);
+            if (response.status == 200 || response.status == "200") { 
+                
+                  const { name, email, pass, type} = response.data;
+                  setNome(name);
+                  setEmail(email);
+                  setSenha(pass);
+                  setTipo(type);  
+                
+              } else {
+                Alert.alert(
+                  'Erro',
+                  'Houve um erro ao buscar o usuário.',
+                  [
+                      { text: 'OK', onPress: () => setVisible(false) },
+                  ],
+                  { cancelable: false },
+               ); 
+              }
+              setVisible(false);             
+              
+              
+            }          
+           
+            
+        
+
         loadUser();
     }, []);
+
+    async function updateUser(){
+
+        const data = new FormData();
+        data.append('_id', user._id)
+        data.append('name', nome);         
+        
+        if(!senha == "Deixe em branco se não quiser alterar a senha"){
+            data.append('pass', senha); 
+        }
+        
+        const response = await api.put(`user/${user._id}`, data);
+        if (response.status == 200 || response.status == "200") {             
+              if(response.data.ok == 1){
+
+                dispatch({ type:'ADD_USER', user: response.data.user });
+                Alert.alert(
+                    'Deu foi certo',
+                    'Usuário alterado com sucesso.',
+                    [
+                        { text: 'OK', onPress: () => setVisible(false) },
+                    ],
+                    { cancelable: false },
+                 ); 
+
+
+              }            
+          } else {
+            Alert.alert(
+              'ihhhh!! ',
+              'Houve um erro ao alterar o usuário.',
+              [
+                  { text: 'OK', onPress: () => setVisible(false) },
+              ],
+              { cancelable: false },
+           ); 
+          }
+          setVisible(false);             
+          
+          
+        } 
+
+        function logOut(){
+
+        }
+    
 
     aboveFlatList = () =>(
         <>
@@ -76,13 +165,13 @@ export default function Profile(props){
         <>
             <ShaddowGreen>
                 <BtnDefault name={"Salvar"} onPress={() => {
-                    cadPatient()
+                    updateUser()
                 }} />
             </ShaddowGreen>
 
             <ShaddowGreen>
                 <BtnDefault name={"Sair"} onPress={() => {
-                    cadPatient()
+                    logOut()
                 }} />
             </ShaddowGreen>
         </>
@@ -110,18 +199,24 @@ export default function Profile(props){
         <Margin>
 
             {index == 3 ? 
-            <TextInput editable={false} placeholder={item.field}  value="" secure={item.secure} 
-                onChangeText={text => checkArray(item.id, text)}/> 
-                : index == 1 ? <TextInput editable={false} placeholder={item.field}  value="" secure={item.secure} 
-                onChangeText={text => checkArray(item.id, text)}/> 
-                : <TextInput placeholder={item.field} 
+            <TextInput editable={false} placeholder={tipo}  value="" secure={item.secure} 
+                onChangeText={text => checkArray(item.id, setTipo(text))}/> 
+                : index == 2 ?<TextInput editable={false} placeholder={'Deixe em branco se não quiser alterar a senha'}  value="" secure={item.secure = true} 
+                onChangeText={text => checkArray(item.id, setSenha(text))}/>
+
+                : index == 1 ? <TextInput editable={false} placeholder={email}  value="" secure={item.secure} 
+                onChangeText={text => checkArray(item.id, setEmail(text))}/> 
+                
+                : <TextInput placeholder={nome} 
                 secure={item.secure} 
                 style={styles.inputBack}
-                onChangeText={text => checkArray(item.id, text)} /> 
+                onChangeText={text => checkArray(item.id, setNome(text))} /> 
             }
 
         </Margin>
     )
+
+    
 
     function checkArray(id, text) {
         //console.log(id)
@@ -136,7 +231,7 @@ export default function Profile(props){
                 <Header                    
                     statusBarProps={{ barStyle: 'light-content' }}
                     barStyle="light-content"
-                    centerComponent={{ text: 'Nome do Usuário', style: styles.headerText }}
+                    centerComponent={{ text: `${nome}`, style: styles.headerText }}
                     containerStyle={{
                         backgroundColor: colors.blueDefault,
                         justifyContent: 'space-around',
@@ -149,11 +244,12 @@ export default function Profile(props){
                     <FlatList
                         style={styles.list}
                         data={fields}
-                        keyExtractor={(item, index) => item.id.toString()}
+                        keyExtractor={(item, index) => item.id.toString()}                        
                         renderItem={({ item, index }) => (
                             renderInputList(item, index)
                         )}
                         ListFooterComponent={belowFlatList}
+
                     />
                 </KeyboardAvoidingView>
                 {/* </SafeAreaView> */}
@@ -179,6 +275,9 @@ const styles = StyleSheet.create({
             justifyContent: 'center',
         }, 
         headerText: {
+            alignContent: 'center',
+            fontWeight: 'bold',
+            fontSize: 25,
             color: colors.white,
         },
         list: {

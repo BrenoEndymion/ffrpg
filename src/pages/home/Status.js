@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
 import {
   SafeAreaView,
@@ -94,6 +95,7 @@ export default function Caracters(props) {
             <MarginBottom />
         </>
     )
+    
     return (
         <>
         <MarginTop />

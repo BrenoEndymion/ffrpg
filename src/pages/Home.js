@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 
 import React, {useState, useEffect} from 'react';
 import {
@@ -17,6 +18,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import { Container, BtnCircle } from './styles/HomeStyles';
+
 import { BtnDefaultCircle } from "../components/Buttons";
 import { AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
 import {Header} from "react-native-elements";
