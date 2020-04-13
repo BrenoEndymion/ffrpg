@@ -11,35 +11,168 @@ import {
   Button,
 } from 'react-native';
 
-import { Image, ImageViewOp, TextWelcome } from './styles/LoginStyles';
-import { TextInput, TextInputWhite } from '../components/TextInputs';
-import { BtnDefault } from "../components/Buttons";
-import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin, Horizontal } from '../components/styles/general';
+import { Container, AlignCenter, MarginTop,  SpaceBetween, Together, ShaddowGreen, Margin, Horizontal, Column } from '../components/styles/general';
 import { Hoshi } from 'react-native-textinput-effects';
 import colors from '../config/colors';
-import {Scroll} from './styles/CaractersStyles';
+import {Scroll, Specialty, SpecialtyRed, BtnCircle} from './styles/CaractersStyles';
 import RNPickerSelect from 'react-native-picker-select';
 import fonts from '../config/fonts';
 import metrics from '../config/metrics';
-import {Divider} from "react-native-elements";
-import imagePicker from 'react-native-image-picker';
+import { BtnDefault } from "../components/Buttons";
+import {useSelector, useDispatch} from 'react-redux';
+import { Actions } from 'react-native-router-flux';
+import { Backdrop } from 'react-native-backdrop';
+
 
 export default function Caracters(props) {
 
-    const [preview, setPreview] = useState(null);
-    const [imageThumb, setImageThumb] = useState(null);
+    const esse = useSelector(state => state.esseData);
+    //console.log(esse);
+    const [fpoints, setFPoints] = useState(esse[4]);
+    const [apoints, setAPoints] = useState(esse[5]);
+    const [arpoints, setArPoints] = useState(esse[6]);
+    const [tpoints, setTPoints] = useState(esse[7]);
+    const [visible, setVisible] = useState(false);
 
+    //setTimeout(() => {Actions.refresh({ param1: 'hello', param2: 'world' })}, 3000)
+    const [caracters, setCaracters] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+    const dispatch = useDispatch();
+
+    function carrega(){
+
+        if(esse[8] == true){
+
+        }else{
+            Actions.refresh({ param1: 'hello', param2: 'world' });
     
+            setFPoints(esse[4]);
+            setAPoints(esse[5]);
+            setArPoints(esse[6]);
+            setTPoints(esse[7]);
+
+            const newId = esse.slice();
+            newId[8] = true;
+            dispatch({ type:'ADD_ESSE', hero: newId });
+
+        }
+    
+    }
+
+
+    const handleOpen = () => {
+        setVisible(true);
+    };
+
+    const handleClose = () => {
+        setVisible(false);
+    };
+
+    function carac(resposta, clicado){
+        const newId = caracters.slice();
+        if(clicado <= 5){
+            if(parseInt(resposta) >= 0){
+                newId[clicado] = parseInt(resposta);
+                setCaracters(newId);
+                setFPoints( fpoints - resposta);
+            }else if(resposta == ""){
+                newId[clicado] = 0;
+                setCaracters(newId);
+                setFPoints( fpoints + caracters[clicado]);
+            }
+        }else if(clicado > 5 && clicado <= 11 ){
+            if(parseInt(resposta) >= 0){
+                newId[clicado] = parseInt(resposta);
+                setCaracters(newId);
+                setAPoints( apoints - resposta);
+            }else if(resposta == ""){
+                newId[clicado] = 0;
+                setCaracters(newId);
+                setAPoints( apoints + caracters[clicado]);
+            }
+        }else if(clicado > 11 && clicado <= 17){
+            if(parseInt(resposta) >= 0){
+                newId[clicado] = parseInt(resposta);
+                setCaracters(newId);
+                setArPoints( arpoints - resposta);
+            }else if(resposta == ""){
+                newId[clicado] = 0;
+                setCaracters(newId);
+                setArPoints( arpoints + caracters[clicado]);
+            }
+        }else if(clicado > 17){
+            if(parseInt(resposta) >= 0){
+                newId[clicado] = parseInt(resposta);
+                setCaracters(newId);
+                setTPoints( tpoints - resposta);
+            }else if(resposta == ""){
+                newId[clicado] = 0;
+                setCaracters(newId);
+                setTPoints( tpoints + caracters[clicado]);
+            }
+        }
+        
+    }
+
+    function saveCaracter(){
+        dispatch({ type:'ADD_SKILL', hero: caracters });
+    }
+
+
     return (
         <>
-        <MarginTop />
         <KeyboardAvoidingView style={styles.background}>
-            <View style={styles.containerInputs}>
+            <Backdrop
+                visible={visible}
+                handleOpen={handleOpen}
+                handleClose={handleClose}
+                onClose={() => { }}
+                swipeConfig={{
+                    velocityThreshold: 0.3,
+                    directionalOffsetThreshold: 80,
+                }}
+                animationConfig={{
+                    speed: 14,
+                    bounciness: 4,
+                }}
+                overlayColor="rgba(0,0,0,0.32)"
+                backdropStyle={{
+                    backgroundColor: '#fff',
+                }}>
+                <Together>
+                    <Horizontal>
+                        <AlignCenter>
+                        <Text style={styles.fireElementText}>Pontos de perícias</Text>
+                            <MarginTop />
+                            <Column>
+                                <Text>Os pontos de perícias são baseado nos níveis de cada essência</Text>
+                                <MarginTop />
+                                <Text>Ao alterar os pontos de essência, na aba anterior, é preciso clicar no botão 'Load' para carrega-los</Text>
+                            </Column>
+                            <MarginTop />
+                        </AlignCenter>
+                    </Horizontal>
+                </Together>
+            </Backdrop>
+            <View>
                 <SafeAreaView>
                     <Margin>
                         <Scroll>
+                        <Horizontal style={{alignContent: 'space-between'}}>
+                            <BtnCircle style={{flex: 1}} name="carregar" onPress={() => {carrega()} } >
+                                <Text>Load</Text>
+                            </BtnCircle>
+                            <BtnCircle style={{flex: 1}} name="info" onPress={() => {handleOpen()} } >
+                                <Text>Info</Text>
+                            </BtnCircle>
+                        </Horizontal>
                            <View style={styles.fireElement}> 
-                             <Text style={styles.fireElementText}>Fogo</Text>
+                           <Horizontal style={{justifyContent: 'center'}}>
+                             <Text style={styles.fireElementText}>Fogo: </Text>
+                             {fpoints >= 0 ? 
+                            <Specialty> Você tem {fpoints} pontos</Specialty>
+                            : <SpecialtyRed> Você excedeu o número de ponto</SpecialtyRed> }
+                            </Horizontal>
                              <Horizontal>
                                 <Hoshi
                                     label={'Intimidação'}
@@ -52,6 +185,10 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(fpoints < 0 && caracters[0] > 0 || fpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 0)}
+                                    value={caracters[0]}
                                 />  
                             
                                 <Hoshi
@@ -65,6 +202,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(fpoints < 0 && caracters[1] > 0 || fpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 1)}
                                 />
                                 <Hoshi
                                     label={'Tecnologia'}
@@ -77,6 +217,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(fpoints < 0 && caracters[2] > 0 || fpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 2)}
                                 />
                             </Horizontal>
                             <Horizontal>
@@ -91,6 +234,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(fpoints < 0 && caracters[3] > 0 || fpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 3)}
                                 />
 
                                 <Hoshi
@@ -104,6 +250,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(fpoints < 0 && caracters[4] > 0 || fpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 4)}
                                 />
 
                                 <Hoshi
@@ -117,13 +266,21 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(fpoints < 0 && caracters[5] > 0 || fpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 5)}
                                 />
                            </Horizontal>
                           </View>  
 
                     
                           <View style={styles.waterElement}>
-                            <Text style={styles.waterElementText}>Água</Text>
+                          <Horizontal style={{justifyContent: 'center'}}>
+                             <Text style={styles.fireElementText}>Água: </Text>
+                             {apoints >= 0 ? 
+                            <Specialty> Você tem {apoints} pontos</Specialty>
+                            : <SpecialtyRed> Você excedeu o número de ponto</SpecialtyRed> }
+                            </Horizontal>
                             <Horizontal>
                                 <Hoshi
                                     label={'Sabedoria'}
@@ -136,6 +293,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(apoints < 0 && caracters[6] > 0 || apoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 6)}
                                 />  
                             
                             <Hoshi
@@ -149,6 +309,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(apoints < 0 && caracters[7] > 0 || apoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 7)}
                                 />
                                 <Hoshi
                                     label={'Carisma'}
@@ -161,6 +324,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(apoints < 0 && caracters[8] > 0 || apoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 8)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -175,6 +341,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(apoints < 0 && caracters[9] > 0 || apoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 9)}
                                 />  
 
                                 <Hoshi
@@ -188,6 +357,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(apoints < 0 && caracters[10] > 0 || apoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 10)}
                                 />  
 
                                 <Hoshi
@@ -201,12 +373,20 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(apoints < 0 && caracters[11] > 0 || apoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 11)}
                                 />                         
                             </Horizontal>
                           </View>
 
                           <View style={styles.AirElement}>
-                            <Text style={styles.airElementText}>Ar</Text>
+                            <Horizontal style={{justifyContent: 'center'}}>
+                             <Text style={styles.fireElementText}>Ar: </Text>
+                             {arpoints >= 0 ? 
+                            <Specialty> Você tem {arpoints} pontos</Specialty>
+                            : <SpecialtyRed> Você excedeu o número de ponto</SpecialtyRed> }
+                            </Horizontal>
                             <Horizontal>
                                 <Hoshi
                                     label={'Atletismo'}
@@ -219,6 +399,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(arpoints < 0 && caracters[12] > 0 || arpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 12)}
                                 />  
                             
                                 <Hoshi
@@ -232,6 +415,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(arpoints < 0 && caracters[13] > 0 || arpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 13)}
                                 />
                                 <Hoshi
                                     label={'Pilotagem'}
@@ -244,6 +430,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(arpoints < 0 && caracters[14] > 0 || arpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 14)}
                                 />
                             </Horizontal>
                             <Horizontal>    
@@ -258,6 +447,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(arpoints < 0 && caracters[15] > 0 || arpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 15)}
                                 /> 
 
                                 <Hoshi
@@ -271,6 +463,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(arpoints < 0 && caracters[16] > 0 || arpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 16)}
                                 /> 
 
                                 <Hoshi
@@ -284,12 +479,20 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(arpoints < 0 && caracters[17] > 0 || arpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 17)}
                                 />
                             </Horizontal> 
                           </View>
 
                           <View style={styles.earthElement}>
-                            <Text style={styles.earthElementText}>Terra</Text>
+                          <Horizontal style={{justifyContent: 'center'}}>
+                             <Text style={styles.fireElementText}>Terra: </Text>
+                             {tpoints >= 0 ? 
+                            <Specialty> Você tem {tpoints} pontos</Specialty>
+                            : <SpecialtyRed> Você excedeu o número de ponto</SpecialtyRed> }
+                            </Horizontal>
                             <Horizontal>
                                 <Hoshi
                                     label={'Tolerância'}
@@ -302,6 +505,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(tpoints < 0 && caracters[18] > 0 || tpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 18)}
                                 />  
                             
                                 <Hoshi
@@ -315,6 +521,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(tpoints < 0 && caracters[19] > 0 || tpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 19)}
                                 />
                                 
                                 <Hoshi
@@ -328,6 +537,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(tpoints < 0 && caracters[20] > 0 || tpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 20)}
                                 /> 
                             </Horizontal>
                             <Horizontal>
@@ -342,6 +554,9 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(tpoints < 0 && caracters[21] > 0 || tpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 21)}
                                 /> 
 
                                 <Hoshi
@@ -355,17 +570,25 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.white}
+                                    maxLength={1}
+                                    editable={(tpoints < 0 && caracters[22] > 0 || tpoints >= 0) ? true : false}
+                                    onChangeText={text => carac(text, 22)}
                                 />
                             </Horizontal> 
                           </View>
-
-                             {/*}<BtnDefault name={'Salvar'}
+                          {fpoints == 0 && 
+                          apoints == 0 && 
+                          arpoints == 0 && 
+                          tpoints == 0 && 
+                            <BtnDefault name={'Salvar'}
                                 styles={styles.enter}
-                                onPress={()=>{}}
+                                onPress={()=>{saveCaracter()}}
                                 TextBtn={'Salvar'}                         
-                            />  {*/}                        
+                            />            
+                          }           
                            
                         </Scroll>
+                        
                     </Margin>        
                 </SafeAreaView>
             </View>

@@ -23,9 +23,40 @@ import fonts from '../config/fonts';
 import metrics from '../config/metrics';
 import {Divider} from "react-native-elements";
 import imagePicker from 'react-native-image-picker';
+import {useSelector, useDispatch} from 'react-redux';
 
 export default function Caracters(props) {
     let qtd = [];
+    
+    const [caracters, setCaracters] = useState([
+        {"0": ["", "", "", "", "", ""]}, 
+        {"1": ["", "", "", "", "", ""]}, 
+        {"2": ["", "", "", "", "", ""]}, 
+        {"3": ["", "", "", "", "", ""]}, 
+        {"4": ["", "", "", "", "", ""]}, 
+        {"5": ["", "", "", "", "", ""]}, 
+        {"6": ["", "", "", "", "", ""]}, 
+        {"7": ["", "", "", "", "", ""]}, 
+        {"8": ["", "", "", "", "", ""]}, 
+        {"9": ["", "", "", "", "", ""]}, 
+     ]);
+
+    const dispatch = useDispatch();
+
+    function carac(resposta, index, clicado){
+        const newId = caracters[index][index].slice();
+        const newVec = caracters.slice(); 
+        console.log(index);
+        newId[clicado] = resposta;
+        newVec[index][index] = newId;
+        console.log(newVec);
+        setCaracters(newVec);
+    }
+
+    function saveCaracter(){
+        dispatch({ type:'ADD_INVE', hero: caracters });
+    }
+
     renderItems = () => {
         for(let i = 0; i <= 50; i++){
             qtd.push(
@@ -34,6 +65,7 @@ export default function Caracters(props) {
         return qtd;
     }
     renderItems();
+
     return (
         <>
         <MarginTop />
@@ -55,6 +87,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -67,6 +100,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -81,6 +115,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -93,6 +128,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -109,6 +145,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -117,7 +154,7 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 0, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
@@ -139,6 +176,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -151,6 +189,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -165,6 +204,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -177,6 +217,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -193,6 +234,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -201,12 +243,13 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 1, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
                             </Horizontal>
                         </CardWhite>   
+                        
                         <Text style={styles.elementText}></Text>
                         <CardWhite>
                             <Horizontal>
@@ -221,6 +264,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -233,6 +277,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -247,6 +292,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -259,6 +305,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -275,6 +322,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -283,12 +331,12 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 2, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
                             </Horizontal>
-                        </CardWhite>   
+                        </CardWhite>
                         <Text style={styles.elementText}></Text>
                         <CardWhite>
                             <Horizontal>
@@ -303,6 +351,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -315,6 +364,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -329,6 +379,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -341,6 +392,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -357,6 +409,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -365,12 +418,12 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 3, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
                             </Horizontal>
-                        </CardWhite>   
+                        </CardWhite>
                         <Text style={styles.elementText}></Text>
                         <CardWhite>
                             <Horizontal>
@@ -385,6 +438,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -397,6 +451,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -411,6 +466,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -423,6 +479,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -439,6 +496,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -447,12 +505,12 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 4, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
                             </Horizontal>
-                        </CardWhite>   
+                        </CardWhite>
                         <Text style={styles.elementText}></Text>
                         <CardWhite>
                             <Horizontal>
@@ -467,6 +525,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -479,6 +538,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -493,6 +553,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -505,6 +566,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -521,6 +583,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -529,12 +592,12 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 5, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
                             </Horizontal>
-                        </CardWhite>   
+                        </CardWhite>
                         <Text style={styles.elementText}></Text>
                         <CardWhite>
                             <Horizontal>
@@ -549,6 +612,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 6, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -561,6 +625,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 6, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -575,6 +640,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 6, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -587,6 +653,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 6, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -603,6 +670,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 6, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -611,12 +679,12 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 6, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
                             </Horizontal>
-                        </CardWhite>   
+                        </CardWhite>
                         <Text style={styles.elementText}></Text>
                         <CardWhite>
                             <Horizontal>
@@ -631,6 +699,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 7, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -643,6 +712,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 7, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -657,6 +727,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 7, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -669,6 +740,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 7, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -685,6 +757,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 7, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -693,12 +766,12 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 7, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
                             </Horizontal>
-                        </CardWhite>   
+                        </CardWhite>
                         <Text style={styles.elementText}></Text>
                         <CardWhite>
                             <Horizontal>
@@ -713,6 +786,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 8, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -725,6 +799,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 8, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -739,6 +814,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 8, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -751,6 +827,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 8, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -767,6 +844,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 8, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -775,12 +853,12 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 8, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
                             </Horizontal>
-                        </CardWhite>   
+                        </CardWhite>
                         <Text style={styles.elementText}></Text>
                         <CardWhite>
                             <Horizontal>
@@ -795,6 +873,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 9, 0)}
                                 />  
                                 <Hoshi
                                     label={'Dano'}
@@ -807,6 +886,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 9, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -821,6 +901,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 9, 2)}
                                 />  
                                 <Hoshi
                                     label={'DefM'}
@@ -833,6 +914,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 9, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -849,6 +931,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 9, 4)}
                                 />  
                                 <RNPickerSelect
                                 textInputProps={styles.pickerSelect}
@@ -857,12 +940,18 @@ export default function Caracters(props) {
                                     value: 'Qtd',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 9, 5)}
                                 items={qtd}
                             />
                             <Divider style={{ backgroundColor: 'black' }} />
                             </Horizontal>
-                        </CardWhite>   
+                        </CardWhite>
+
+                        <BtnDefault name={'Salvar'}
+                            styles={styles.enter}
+                            onPress={()=>{saveCaracter()}}
+                            TextBtn={'Salvar'}                         
+                        />
                     </Scroll>
                 </Margin>        
             </SafeAreaView>

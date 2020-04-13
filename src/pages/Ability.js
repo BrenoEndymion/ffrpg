@@ -18,13 +18,35 @@ import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen
 import { Hoshi } from 'react-native-textinput-effects';
 import colors from '../config/colors';
 import {Scroll} from './styles/CaractersStyles';
-import RNPickerSelect from 'react-native-picker-select';
-import fonts from '../config/fonts';
-import metrics from '../config/metrics';
-import {Divider} from "react-native-elements";
-import imagePicker from 'react-native-image-picker';
+import {useSelector, useDispatch} from 'react-redux';
 
 export default function Caracters(props) {
+
+    const [caracters, setCaracters] = useState([
+        {"0": ["", "", "", "", ""]}, 
+        {"1": ["", "", "", "", ""]}, 
+        {"2": ["", "", "", "", ""]}, 
+        {"3": ["", "", "", "", ""]}, 
+        {"4": ["", "", "", "", ""]}, 
+        {"5": ["", "", "", "", ""]}, 
+     ]);
+
+
+     const dispatch = useDispatch();
+
+    function carac(resposta, index, clicado){
+        const newId = caracters[index][index].slice();
+        const newVec = caracters.slice(); 
+        console.log(index);
+        newId[clicado] = resposta;
+        newVec[index][index] = newId;
+        console.log(newVec);
+        setCaracters(newVec);
+    }
+
+    function saveCaracter(){
+        dispatch({ type:'ADD_SKILL', hero: caracters });
+    }
 
     return (
         <>
@@ -47,6 +69,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 0)}
                                 />  
                                 <Hoshi
                                     label={'Tipo'}
@@ -59,6 +82,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -73,6 +97,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 2)}
                                 />  
                                 <Hoshi
                                     label={'Alvo'}
@@ -85,6 +110,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -101,6 +127,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0, 4)}
                                 />  
                             </Horizontal>
                         </CardWhite>    
@@ -119,6 +146,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 0)}
                                 />  
                                 <Hoshi
                                     label={'Tipo'}
@@ -131,6 +159,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -145,6 +174,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 2)}
                                 />  
                                 <Hoshi
                                     label={'Alvo'}
@@ -157,6 +187,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -173,6 +204,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 1, 4)}
                                 />  
                             </Horizontal>
                         </CardWhite>  
@@ -190,6 +222,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 0)}
                                 />  
                                 <Hoshi
                                     label={'Tipo'}
@@ -202,6 +235,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -216,6 +250,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 2)}
                                 />  
                                 <Hoshi
                                     label={'Alvo'}
@@ -228,6 +263,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -244,6 +280,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 2, 4)}
                                 />  
                             </Horizontal>
                         </CardWhite>  
@@ -262,6 +299,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 0)}
                                 />  
                                 <Hoshi
                                     label={'Tipo'}
@@ -274,6 +312,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -288,6 +327,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 2)}
                                 />  
                                 <Hoshi
                                     label={'Alvo'}
@@ -300,6 +340,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -316,6 +357,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 3, 4)}
                                 />  
                             </Horizontal>
                         </CardWhite>  
@@ -334,6 +376,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 0)}
                                 />  
                                 <Hoshi
                                     label={'Tipo'}
@@ -346,6 +389,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -360,6 +404,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 2)}
                                 />  
                                 <Hoshi
                                     label={'Alvo'}
@@ -372,6 +417,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -388,6 +434,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 4, 4)}
                                 />  
                             </Horizontal>
                         </CardWhite>  
@@ -406,6 +453,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 0)}
                                 />  
                                 <Hoshi
                                     label={'Tipo'}
@@ -418,6 +466,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 1)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -432,6 +481,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 2)}
                                 />  
                                 <Hoshi
                                     label={'Alvo'}
@@ -444,6 +494,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 3)}
                                 />  
                             </Horizontal>
                             <Horizontal>
@@ -460,10 +511,15 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 5, 4)}
                                 />  
                             </Horizontal>
                         </CardWhite>  
-
+                        <BtnDefault name={'Salvar'}
+                            styles={styles.enter}
+                            onPress={()=>{saveCaracter()}}
+                            TextBtn={'Salvar'}                         
+                        />
                         
                     </Scroll>
                 </Margin>        

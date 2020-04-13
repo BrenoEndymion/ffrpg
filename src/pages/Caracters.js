@@ -24,12 +24,16 @@ import metrics from '../config/metrics';
 import {Divider} from "react-native-elements";
 import imagePicker from 'react-native-image-picker';
 import { TextBtn } from '../components/styles/ButtonsStyles';
+import {useSelector, useDispatch} from 'react-redux';
 
 export default function Caracters(props) {
 
     const [preview, setPreview] = useState(null);
     const [imageThumb, setImageThumb] = useState(null);
-
+    const [caracters, setCaracters] = useState([false, false, false, false, false, false, false, false, false, false]);
+    const dispatch = useDispatch()
+    const teste = useSelector(state => state.heroData);
+    
     handleSelect = () => {
         imagePicker.showImagePicker({
             title: 'Selecionar Imagem',
@@ -63,25 +67,10 @@ export default function Caracters(props) {
 
                 console.log(prev);
                 setPreview(prev);
-                setImageThumb(imagethumb);
+                carac(imagethumb, 9);
             }
         })
     }
-    dropdown = () => (
-            <RNPickerSelect
-                textInputProps={styles.pickerSelect}
-                placeholder={{
-                    label: 'Tipo',
-                    value: 'Tipo',
-                    color: '#000'
-                }}
-                onValueChange={(value) => arrayItems[4] = value}
-                items={[
-                    { label: 'Jogador', value: 'Jogador', key: '0' },
-                    { label: 'Mestre', value: 'Mestre', key: '1' },
-                ]}
-            />
-    );
 
     AboveFlatList = () => (
         <>
@@ -96,6 +85,17 @@ export default function Caracters(props) {
             <MarginBottom />
         </>
     )
+
+    function carac(resposta, clicado){
+        const newId = caracters.slice();
+        newId[clicado] = resposta;
+        //setCaracters({ 0: resposta, 1: caracters[1], 2: caracters[2], 3: caracters[3], 4: caracters[4], 5: caracters[5], 6: caracters[6], 7: caracters[7], 8: caracters[8], 9: caracters[9]});
+        setCaracters(newId);
+    }
+
+    function saveCaracter(){
+        dispatch({ type:'ADD_HERO', hero: caracters });
+    }
     return (
         <>
         <MarginTop />
@@ -116,6 +116,7 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 0)}
                             />
                             
                             <RNPickerSelect
@@ -125,7 +126,7 @@ export default function Caracters(props) {
                                     value: 'Raça',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 1)}
                                 items={[
                                     { label: 'Humano', value: 'Humano', key: '0' },
                                     { label: 'Bangaa', value: 'Bangaa', key: '1' },
@@ -152,7 +153,7 @@ export default function Caracters(props) {
                                     value: 'Jobs',
                                     color: '#000'
                                 }}
-                                onValueChange={(value) => console.log(value)}
+                                onValueChange={(value) => carac(value, 2)}
                                 items={[
                                     { label: 'Cavaleiro', value: 'Cavaleiro', key: '0' },
                                     { label: 'Guerreiro', value: 'Guerreiro', key: '1' },
@@ -175,6 +176,7 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 3)}
                             />
                             <Hoshi
                                 label={'Sexo'}
@@ -187,6 +189,7 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 4)}
                             />
                             <Hoshi
                                 label={'Altura'}
@@ -199,6 +202,7 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 5)}
                             />
                             <Hoshi
                                 label={'Peso'}
@@ -211,6 +215,7 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 6)}
                             />
                             <Hoshi
                                 label={'Olhos'}
@@ -223,6 +228,7 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 7)}
                             />
                             <Hoshi
                                 label={'Cabelos'}
@@ -235,15 +241,15 @@ export default function Caracters(props) {
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 8)}
                             />
 
-                            {/*}
+                            
                             <BtnDefault name={'Salvar'}
                                 styles={styles.enter}
-                                onPress={()=>{}}
+                                onPress={()=>{saveCaracter()}}
                                 TextBtn={'Salvar'}                         
                             />
-                            {*/}
 
                         </Scroll>
                     </Margin>        

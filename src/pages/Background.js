@@ -18,8 +18,32 @@ import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen
 import { Hoshi } from 'react-native-textinput-effects';
 import colors from '../config/colors';
 import {Scroll} from './styles/CaractersStyles';
+import {useSelector, useDispatch} from 'react-redux';
 
-export default function Caracters(props) {
+export default function Background(props) {
+
+    const [caracters, setCaracters] = useState([""]);
+    const [caracters2, setCaracters2] = useState([""]);
+
+    const dispatch = useDispatch();
+
+    function carac(resposta, clicado){
+        const newId = caracters.slice();
+        newId[clicado] = resposta;
+        //setCaracters({ 0: resposta, 1: caracters[1], 2: caracters[2], 3: caracters[3], 4: caracters[4], 5: caracters[5], 6: caracters[6], 7: caracters[7], 8: caracters[8], 9: caracters[9]});
+        setCaracters(newId);
+    }
+    function carac2(resposta, clicado){
+        const newId = caracters2.slice();
+        newId[clicado] = resposta;
+        //setCaracters({ 0: resposta, 1: caracters[1], 2: caracters[2], 3: caracters[3], 4: caracters[4], 5: caracters[5], 6: caracters[6], 7: caracters[7], 8: caracters[8], 9: caracters[9]});
+        setCaracters2(newId);
+    }
+
+    function saveCaracter(){
+        dispatch({ type:'ADD_BACK', hero: caracters });
+        dispatch({ type:'ADD_ANOT', hero: caracters2 });
+    }
 
     return (
         <>
@@ -46,6 +70,7 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac(text, 0)}
                                 />  
                             </Horizontal>
                         </CardWhite>    
@@ -66,11 +91,12 @@ export default function Caracters(props) {
                                     // this is used to set backgroundColor of label mask.
                                     // please pass the backgroundColor of your TextInput container.
                                     backgroundColor={colors.grayLight}
+                                    onChangeText={text => carac2(text, 0)}
                                 />  
                             </Horizontal>
                         </CardWhite>  
 
-                        <BtnDefault name={'Salvar'}
+                        <BtnDefault name={'Criar personagem'}
                                 styles={styles.enter}
                                 onPress={()=>{}}
                                 TextBtn={'Salvar'}                         

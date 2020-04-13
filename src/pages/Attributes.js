@@ -17,91 +17,49 @@ import { BtnDefault } from "../components/Buttons";
 import { Container, AlignCenter, MarginTop, MarginBottom, Together, ShaddowGreen, Margin } from '../components/styles/general';
 import { Hoshi } from 'react-native-textinput-effects';
 import colors from '../config/colors';
-import {Scroll} from './styles/CaractersStyles';
+import {Scroll, Specialty, SpecialtyRed} from './styles/CaractersStyles';
 import RNPickerSelect from 'react-native-picker-select';
 import fonts from '../config/fonts';
 import metrics from '../config/metrics';
 import {Divider} from "react-native-elements";
 import imagePicker from 'react-native-image-picker';
+import {useSelector, useDispatch} from 'react-redux';
 
-export default function Caracters(props) {
+export default function Atributes(props) {
 
-    const [preview, setPreview] = useState(null);
+    const [points, setPoints] = useState(8);
     const [imageThumb, setImageThumb] = useState(null);
+    const [caracters, setCaracters] = useState([0, 0, 0, 0, 0]);
+    const dispatch = useDispatch();
+    let total = 0;
 
-    handleSelect = () => {
-        imagePicker.showImagePicker({
-            title: 'Selecionar Imagem',
-        }, upload => {
-            if(upload.error){
-                console.log('erro imagem');
-            }else if(upload.didCancel){
-                console.log('usuário cancelou');
-            }else{
-                 const prev = {
-                    //uri: `data:image/jpeg;base64,${upload.data}`,
-                    uri: upload.uri,
-                };
-
-                let prefix;
-                let ext;
-
-                if(upload.fileName){
-                    [prefix, ext] = upload.fileName.split('.');
-                    ext= ext.toLowerCase() === 'heic' ? 'jpg' : ext;
-                }else{
-                    prefix = new Date().getTime();
-                    ext = 'jpg';
-                }
-
-                const imagethumb = {
-                    uri: upload.uri,
-                    type: upload.type,
-                    name: `${prefix}.${ext}`,
-                };
-
-                console.log(prev);
-                setPreview(prev);
-                setImageThumb(imagethumb);
-            }
-        })
+    function carac(resposta, clicado){
+        const newId = caracters.slice();
+        if(parseInt(resposta) >= 0){
+            newId[clicado] = parseInt(resposta);
+            setCaracters(newId);
+            setPoints(points - resposta);
+        }else if(resposta == ""){
+            newId[clicado] = 0;
+            setCaracters(newId);
+            setPoints( points + caracters[clicado]);
+        }
     }
-    dropdown = () => (
-            <RNPickerSelect
-                textInputProps={styles.pickerSelect}
-                placeholder={{
-                    label: 'Tipo',
-                    value: 'Tipo',
-                    color: '#000'
-                }}
-                onValueChange={(value) => arrayItems[4] = value}
-                items={[
-                    { label: 'Jogador', value: 'Jogador', key: '0' },
-                    { label: 'Mestre', value: 'Mestre', key: '1' },
-                ]}
-            />
-    );
 
-    AboveFlatList = () => (
-        <>
-            <MarginTop />
+    function saveCaracter(){
+        dispatch({ type:'ADD_ATRI', hero: caracters });
+    }
 
-            <AlignCenter>
-                <ImageViewOp onPress={() => { handleSelect()}} >
-                    {preview != null ? <Image source={preview} /> : console.log('') }
-                </ImageViewOp>
-            </AlignCenter>
-
-            <MarginBottom />
-        </>
-    )
     return (
         <>
         <KeyboardAvoidingView style={styles.background}>
                 <SafeAreaView>
                     <Margin>
                         <Scroll>
-                           <View style={styles.FisicAtrributes}> 
+                            {points >= 0 ? 
+                            <Specialty> Você tem {points} pontos</Specialty>
+                            : <SpecialtyRed> Você excedeu o número de ponto</SpecialtyRed> }
+                          <View style={styles.FisicAtrributes}> 
                             <Hoshi
                                 label={'Força'}
                                 style={styles.inputStyle}
@@ -109,10 +67,13 @@ export default function Caracters(props) {
                                 borderColor={colors.blueDefault}
                                 // active border height
                                 borderHeight={3}
+                                maxLength={1}
                                 inputPadding={16}
+                                editable={(points < 0 && caracters[0] > 0 || points >= 0) ? true : false}
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 0)}
                             />  
                            
                             <Hoshi
@@ -123,9 +84,12 @@ export default function Caracters(props) {
                                 // active border height
                                 borderHeight={3}
                                 inputPadding={16}
+                                maxLength={1}
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
+                                editable={(points < 0 && caracters[1] > 0 || points >= 0) ? true : false}
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 1)}
                             />
                             <Hoshi
                                 label={'Resistência'}
@@ -134,10 +98,13 @@ export default function Caracters(props) {
                                 borderColor={colors.blueDefault}
                                 // active border height
                                 borderHeight={3}
+                                maxLength={1}
                                 inputPadding={16}
+                                editable={(points < 0 && caracters[2] > 0 || points >= 0) ? true : false}
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 2)}
                             />
                             <Hoshi
                                 label={'Armadura'}
@@ -147,9 +114,12 @@ export default function Caracters(props) {
                                 // active border height
                                 borderHeight={3}
                                 inputPadding={16}
+                                maxLength={1}
+                                editable={(points < 0 && caracters[3] > 0 || points >= 0) ? true : false}
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 3)}
                             />
                             <Hoshi
                                 label={'Poder de Fogo'}
@@ -159,117 +129,21 @@ export default function Caracters(props) {
                                 // active border height
                                 borderHeight={3}
                                 inputPadding={16}
+                                maxLength={1}
+                                editable={(points < 0 && caracters[4] > 0 || points >= 0) ? true : false}
                                 // this is used to set backgroundColor of label mask.
                                 // please pass the backgroundColor of your TextInput container.
                                 backgroundColor={colors.white}
+                                onChangeText={text => carac(text, 4)}
                             />
+                            {points == 0 && 
+                                <BtnDefault name={'Salvar'}
+                                    styles={styles.enter}
+                                    onPress={()=>{saveCaracter()}}
+                                    TextBtn={'Salvar'}                         
+                                />
+                            }
                           </View>  
-
-                          
-                          {/*}<View style={styles.modifers}>
-                              <Text style={styles.ModifierText}>Modificadores</Text>
-                            <Hoshi
-                                label={'Força de ataque'}
-                                style={styles.inputStyle}
-                                // this is used as active border color
-                                borderColor={colors.blueDefault}
-                                // active border height
-                                borderHeight={3}
-                                inputPadding={16}
-                                // this is used to set backgroundColor of label mask.
-                                // please pass the backgroundColor of your TextInput container.
-                                backgroundColor={colors.white}
-                            />  
-
-                            <Hoshi
-                                label={'Defesa Física'}
-                                style={styles.inputStyle}
-                                // this is used as active border color
-                                borderColor={colors.blueDefault}
-                                // active border height
-                                borderHeight={3}
-                                inputPadding={16}
-                                // this is used to set backgroundColor of label mask.
-                                // please pass the backgroundColor of your TextInput container.
-                                backgroundColor={colors.white}
-                            />  
-
-                            <Hoshi
-                                label={'Defesa Mágica'}
-                                style={styles.inputStyle}
-                                // this is used as active border color
-                                borderColor={colors.blueDefault}
-                                // active border height
-                                borderHeight={3}
-                                inputPadding={16}
-                                // this is used to set backgroundColor of label mask.
-                                // please pass the backgroundColor of your TextInput container.
-                                backgroundColor={colors.white}
-                            />  
-
-                            <Hoshi
-                                label={'Evasão Física'}
-                                style={styles.inputStyle}
-                                // this is used as active border color
-                                borderColor={colors.blueDefault}
-                                // active border height
-                                borderHeight={3}
-                                inputPadding={16}
-                                // this is used to set backgroundColor of label mask.
-                                // please pass the backgroundColor of your TextInput container.
-                                backgroundColor={colors.white}
-                            />  
-
-                            <Hoshi
-                                label={'Evasão Mágica'}
-                                style={styles.inputStyle}
-                                // this is used as active border color
-                                borderColor={colors.blueDefault}
-                                // active border height
-                                borderHeight={3}
-                                inputPadding={16}
-                                // this is used to set backgroundColor of label mask.
-                                // please pass the backgroundColor of your TextInput container.
-                                backgroundColor={colors.white}
-                            />  
-                            </View>
-
-                          <View style={styles.StatusAtributes}>
-                            <Text style={styles.StatusText}>Status</Text>
-                              <Hoshi
-                                label={'Pontos de vida'}
-                                style={styles.inputStyle}
-                                // this is used as active border color
-                                borderColor={colors.blueDefault}
-                                // active border height
-                                borderHeight={3}
-                                inputPadding={16}
-                                // this is used to set backgroundColor of label mask.
-                                // please pass the backgroundColor of your TextInput container.
-                                backgroundColor={colors.white}
-                            />  
-
-                            <Hoshi
-                                label={'Pontos de Magia'}
-                                style={styles.inputStyle}
-                                // this is used as active border color
-                                borderColor={colors.blueDefault}
-                                // active border height
-                                borderHeight={3}
-                                inputPadding={16}
-                                // this is used to set backgroundColor of label mask.
-                                // please pass the backgroundColor of your TextInput container.
-                                backgroundColor={colors.white}
-                            />  
-
-                          </View>
-    
-                             <BtnDefault name={'Salvar'}
-                                styles={styles.enter}
-                                onPress={()=>{}}
-                                TextBtn={'Salvar'}                         
-                            />                          
-                           {*/}
                         </Scroll>
                     </Margin>        
                 </SafeAreaView>

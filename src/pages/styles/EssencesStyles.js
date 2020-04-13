@@ -18,3 +18,13 @@ export const Nv = styled.Text`
     text-align: left;
     margin-top: 45px;
 `
+
+export const Specialty = styled.Text`
+  font-size: ${fonts.textButton}px;
+  color: ${colors.gray};
+`;
+
+export const SpecialtyRed = styled.Text`
+  font-size: ${fonts.textButton}px;
+  color: ${colors.red};
+`;

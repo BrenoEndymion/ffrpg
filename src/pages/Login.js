@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -31,6 +31,25 @@ export default function Login(props) {
     const [visible, setVisible] = useState(false);
     const teste = useSelector(state => state.data);
     const dispatch = useDispatch()
+
+
+    useEffect(() => {
+        function hasUser(){
+            if(teste.type == "Jogador"){
+                setVisible(true);
+                Actions.tabBar()
+                setVisible(false);
+            }else if (teste.type == "Mestre") {
+                setVisible(true);
+                Actions.tabBarmaster()
+                setVisible(false);
+            } else {
+                console.log('sem user');
+            }
+        }
+        hasUser();
+    }, []);
+
     async function Log() {
         
         if(!email || email == ''){
