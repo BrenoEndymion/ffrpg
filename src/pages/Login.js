@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
-=======
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable prettier/prettier */
-import React, { useState } from 'react';
->>>>>>> 13a4bb3370752c51ad192ff67d466bb989055bd4
 import {
   SafeAreaView,
   StyleSheet,

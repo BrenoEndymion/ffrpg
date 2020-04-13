@@ -8,7 +8,8 @@ import{
   Text,
   StatusBar,
   FlatList,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  Alert
 } from 'react-native';
 
 import {ImageView, Image ,BtnB , Container } from './styles/ProfileStyles';
@@ -95,9 +96,6 @@ export default function Profile(props){
               
             }          
            
-            
-        
-
         loadUser();
     }, []);
 
@@ -201,10 +199,14 @@ export default function Profile(props){
             {index == 3 ? 
             <TextInput editable={false} placeholder={tipo}  value="" secure={item.secure} 
                 onChangeText={text => checkArray(item.id, setTipo(text))}/> 
-                : index == 2 ?<TextInput editable={false} placeholder={'Deixe em branco se não quiser alterar a senha'}  value="" secure={item.secure = true} 
-                onChangeText={text => checkArray(item.id, setSenha(text))}/>
+                
+                : index == 2 ?<TextInput 
+                    editable={true} 
+                    placeholder={'Deixe em branco se não quiser alterar a senha'}  
+                    secure={item.secure = true} 
+                onChangeText={text2 => checkArray(item.id, setSenha(text2))}/>
 
-                : index == 1 ? <TextInput editable={false} placeholder={email}  value="" secure={item.secure} 
+                : index == 1 ? <TextInput editable={false} placeholder={email} secure={item.secure} 
                 onChangeText={text => checkArray(item.id, setEmail(text))}/> 
                 
                 : <TextInput placeholder={nome} 
